@@ -1,0 +1,5 @@
+print("Running")
+fh = open('location',"w")
+file_contents = f.read('Student.txt')
+print(file_contents)
+#save a py program to a txt document. 
