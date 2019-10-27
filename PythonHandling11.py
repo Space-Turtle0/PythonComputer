@@ -1,2 +1,2 @@
-fileout = open('C:/rohit/Student_out.txt',"a")
+fileout = open('location',"a")
 fileout.write("Hello")
