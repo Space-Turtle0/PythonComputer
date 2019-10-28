@@ -1,5 +1,7 @@
 # PythonComputer
 # PythonComputer is a simple python program (no display) that simulates a computer. 
+>This Program isn't finished and will be updated time to time!
+This repo has multiple .py modules you can use in your daily programs!
 
 There will be additional elements which you can add to on your own. 
 
