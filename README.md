@@ -15,11 +15,18 @@ PyCharm: https://www.jetbrains.com/pycharm/download/
 >>>Customizability
 You will see in the folder 2 variables.
 Location or/and pass
-# [PASS] IF you see the variable pass,
+# [PASS] IF you see the variable "pass",
 This is just the "default" password, you can change it to whatever you want.
 
-# [Location] IF you see the variable location
+# [Location] IF you see the variable "location"
 It normally means give the location of a file. 
 [WARNING:] It is best you give a new and empty txt file! 
 Otherwise you might hit some error. Don't expect your old txt file to be as it is.
 Python will most likely erase it and follow the script!
+
+# What to do with Variables
+If you have pass:
+Remove it and enter a new password you want.
+
+If you have location:
+Remove it and paste in a location of a ***NEW .TXT*** file!
