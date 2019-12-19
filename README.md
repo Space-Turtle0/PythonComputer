@@ -18,6 +18,12 @@ PyCharm: https://www.jetbrains.com/pycharm/download/
 4) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
 5) Congrats! You now have access to the files.
 
+# Warning:
+Any unintentional change may cause a problem during execution! 
+If you did by mistake check the original file and revert the changes.
+*Or just do Ctrl + Z*
+Otherwise, make sure you know what your doing before making a crucial change!
+
 # [New Python Computer]
 - If you're using the new 2019pc.py
 Its straight forward. 
