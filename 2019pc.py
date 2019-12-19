@@ -1,6 +1,7 @@
 import time, webbrowser, os, warnings
-print("Made by Space Turtle!")
 time.sleep(3)
+websitechoicetf == False
+filetf == False
 print("Booting...")
 psword =input("Please enter your password ")
 if psword ==("Bluecore"):
@@ -20,17 +21,25 @@ if psword ==("Bluecore"):
             Logs = open(r"Logs.txt", "r")
             print(Logs.readlines())
             Logs.close()
-
+        if appchoice == "Open":
+            print("Opening!")
+            if filetf == True:
+                print("Accessing file...")
+                open(save1)
+            else:
+                print("Error: You have no save!")
+                print("Please go to Config to save a file!")
+            
         if appchoice ==("Browser"):
             print("Loading...")
             webchoice=input("Open bookmarks?")
             if webchoice == "yes":
                 print("Loading...")
-                if websitechoicetf == 1:
-                    print("Opening" + websitechoice)
+                if websitechoicetf == True:
+                    print("Opening" + linksave)
                     Logsweb = open(r"Logs.txt", "a")
-                    webbrowser.open("www." + websitechoice, new=0, autoraise=True)
-                    Logsweb.write("Visited: www." + websitechoice + "\n")
+                    webbrowser.open("www." + linksave, new=0, autoraise=True)
+                    Logsweb.write("Visited: www." + linksave + "\n")
                 else:
                     print("Sorry, you have no bookmark!")
                     print("Set it up in Config!")
@@ -143,8 +152,12 @@ if psword ==("Bluecore"):
                     print(num, "is a prime number")
             else:
                 print(num, "is not a prime number")
+                
         if appchoice == "Config":
             print("Get your path/link ready!")
+            print("If you are saving a file...")
+            print("Please enter the FULL PATH!")
+            print("Otherwise it will open a new file with that name!")
             websitechoiceconfig = input("What should I open? (File or Link?) ")
             if websitechoiceconfig == "File":
                 print("Please wait...")
@@ -158,6 +171,7 @@ if psword ==("Bluecore"):
                         save1 =input("What do you want this called? ")
                         save1 == fileopen
                         print("Saved as" + save1 + ".")
+                        filetf == True
             if websitechoiceconfig == "Link":
                 linkpl = input("Copy and Paste your link here.. ")
                 des2008 = input("What do you want me to do with it? ")
@@ -166,15 +180,10 @@ if psword ==("Bluecore"):
                 if des2008 == "Save":
                     linksave == linkpl
                     print("Saved "+ linksave)
+                    websitechoicetf == True
 
 
 
 
-
-
-
-
-
-
-
-
+else:
+    exit("Incorrect Password...")
