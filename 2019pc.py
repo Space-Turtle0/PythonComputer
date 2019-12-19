@@ -1,4 +1,5 @@
 import time, webbrowser, os, warnings
+print("Made by Space Turtle!")
 time.sleep(3)
 print("Booting...")
 psword =input("Please enter your password ")
@@ -21,15 +22,29 @@ if psword ==("Bluecore"):
             Logs.close()
 
         if appchoice ==("Browser"):
-            website=input("What would you like to search? Format: python.org ")
-            print("Opening "+ "www."+website)
-            time.sleep(1)
-            print("Requesting www."+website, "with chrome")
-            time.sleep(1)
-            webbrowser.open("www."+ website,new=0, autoraise=True)
-            Logsweb = open(r"Logs.txt", "a")
-            Logsweb.write("Visited: www."+ website + "\n")
-            Logsweb.close()
+            print("Loading...")
+            webchoice=input("Open bookmarks?")
+            if webchoice == "yes":
+                print("Loading...")
+                if websitechoicetf == 1:
+                    print("Opening" + websitechoice)
+                    Logsweb = open(r"Logs.txt", "a")
+                    webbrowser.open("www." + websitechoice, new=0, autoraise=True)
+                    Logsweb.write("Visited: www." + websitechoice + "\n")
+                else:
+                    print("Sorry, you have no bookmark!")
+                    print("Set it up in Config!")
+
+            else:
+                website=input("What would you like to search? Format: python.org ")
+                print("Opening "+ "www."+website)
+                time.sleep(1)
+                print("Requesting www."+website, "with chrome")
+                time.sleep(1)
+                webbrowser.open("www."+ website,new=0, autoraise=True)
+                Logsweb = open(r"Logs.txt", "a")
+                Logsweb.write("Visited: www."+ website + "\n")
+                Logsweb.close()
         if appchoice ==("Calculator"):
             def add(x, y):
                 return x + y
@@ -128,4 +143,38 @@ if psword ==("Bluecore"):
                     print(num, "is a prime number")
             else:
                 print(num, "is not a prime number")
+        if appchoice == "Config":
+            print("Get your path/link ready!")
+            websitechoiceconfig = input("What should I open? (File or Link?) ")
+            if websitechoiceconfig == "File":
+                print("Please wait...")
+                fileopen = input("Please input a files name or path! ")
+                des2009 = input("What do you want me to do with it? ")
+                if des2009 == "Open":
+                    print("Opening" + fileopen)
+                    Bookmarkfile = open(r, fileopen, "a")
+                    if des2009 == "Save":
+                        print("Saving!")
+                        save1 =input("What do you want this called? ")
+                        save1 == fileopen
+                        print("Saved as" + save1 + ".")
+            if websitechoiceconfig == "Link":
+                linkpl = input("Copy and Paste your link here.. ")
+                des2008 = input("What do you want me to do with it? ")
+                if des2008 == "Open":
+                    webbrowser.open("www." + linkpl, new=0, autoraise=True)
+                if des2008 == "Save":
+                    linksave == linkpl
+                    print("Saved "+ linksave)
+
+
+
+
+
+
+
+
+
+
+
 
