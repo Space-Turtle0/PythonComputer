@@ -13,7 +13,9 @@ if psword ==("Bluecore"):
 
     des = "y"
     while des == "y":
-        appchoice =input("What would you like to use today? (Calculator,Browser, Logout, Settings.)")
+        print("Options:")
+        print("Settings, Browser, Calculator, Console, Config, Settings-2")
+        appchoice =input("What would you like to use today?")
         if appchoice ==("Settings"):
             print("Loading...")
             time.sleep(2)
@@ -138,7 +140,7 @@ if psword ==("Bluecore"):
                     os.system('start "SSH":')
 
 
-        if appchoice == "Settings":
+        if appchoice == "Settings-2":
             os.system('start ms-settings:')
         if appchoice == "Prime":
             num =int(input("Number to test: "))
