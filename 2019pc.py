@@ -29,7 +29,7 @@ if psword ==("Bluecore"):
             else:
                 print("Error: You have no save!")
                 print("Please go to Config to save a file!")
-            
+
         if appchoice ==("Browser"):
             print("Loading...")
             webchoice=input("Open bookmarks?")
@@ -152,7 +152,7 @@ if psword ==("Bluecore"):
                     print(num, "is a prime number")
             else:
                 print(num, "is not a prime number")
-                
+
         if appchoice == "Config":
             print("Get your path/link ready!")
             print("If you are saving a file...")
@@ -181,8 +181,19 @@ if psword ==("Bluecore"):
                     linksave == linkpl
                     print("Saved "+ linksave)
                     websitechoicetf == True
-
-
+            if appchoice == "Credits":
+                print("Loading...")
+                time.sleep(2)
+                print("Thank you for using my program!")
+                print("I've spent a lot of time on this project and its been wonderful!")
+                print("If you don't know what this is...")
+                print("Its a simple .py file that tried to show many modules/python features!")
+                print("Hopefully you took something away from this!")
+                print("Program made by Space")
+                print("aka: Space Turtle!")
+                print("Check out my other stuff on GitHub!")
+                time.sleep(1)
+                webbrowser.open("https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py", new=0, autoraise=True)
 
 
 else:
