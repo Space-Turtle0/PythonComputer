@@ -4,8 +4,12 @@
 This repo has multiple .py modules you can use in your daily programs!
 
 There will be additional elements which you can add to on your own. 
+# 2019 or older .py files
+Hey there! If your looking for anything that isn't 2019py, it won't be updated!
+With this new 2019py file. Its consuming most of my time so I won't be able to work on it. 
+Be sure to check 2019py out!
 
->>>INSTALATION
+# INSTALATION/ IDE Setup
 1) Download the ZIP folder
 2) Download Visual Studio Code or PyCharm
 VSC: https://code.visualstudio.com/
@@ -14,25 +18,24 @@ PyCharm: https://www.jetbrains.com/pycharm/download/
 4) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
 5) Congrats! You now have access to the files.
 
->>>Customizability
-You will see in the folder 2 variables.
-Location or/and pass
-# [PASS] IF you see the variable "pass",
-This is just the "default" password, you can change it to whatever you want.
-
-# [Location] IF you see the variable "location"
-It normally means give the location of a file. 
-[WARNING:] It is best you give a new and empty txt file! 
-Otherwise you might hit some error. Don't expect your old txt file to be as it is.
-Python will most likely erase it and follow the script!
-
-# What to do with Variables
-If you have pass:
-Remove it and enter a new password you want.
-
-If you have location:
-Remove it and paste in a location of a ***NEW .TXT*** file!
-
 # [New Python Computer]
 - If you're using the new 2019pc.py
-Its straight forward. Look for any input variables to change. Leave *appchoice* alone. It controls the apps inside the computer!
+Its straight forward. 
+>>> Adding on to the file!
+To setup a branch, add the following
+```
+if appchoice == "Your Portion Name":
+    print("Move on from here")
+```
+Use that ^ to move on with the file!
+
+>>> Setting up before execution
+```
+import time, webbrowser, os, warnings
+time.sleep(3)
+websitechoicetf == False
+filetf == False
+```
+This is an example startup.
+If you need to reset values or import modules. Do it there!
+
