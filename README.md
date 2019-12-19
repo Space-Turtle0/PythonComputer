@@ -35,4 +35,4 @@ Remove it and paste in a location of a ***NEW .TXT*** file!
 
 # [New Python Computer]
 - If you're using the new 2019pc.py
-Its straight forward. Look for any input variables to change. Leave *appchouce* alone. It controls the apps inside the computer!
+Its straight forward. Look for any input variables to change. Leave *appchoice* alone. It controls the apps inside the computer!
