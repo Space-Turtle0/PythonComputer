@@ -24,8 +24,34 @@ Open it with command prompt.
 
 # Help! What do I download?
 Well it really depends on you.
-The new python PC
+**Python PC v2**
+**2019pc.py**
+*Download this! Most revent version and being worked on!*
 - https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py
+**Python PC**
+**Computer.py**
+*Old version, not being worked on...*
+*This is V1*
+- https://github.com/Space-Turtle0/PythonComputer/blob/master/Computer.py
+**File Formatting**
+**File-Formatting-E.py**
+*Module Used for V1*
+- https://github.com/Space-Turtle0/PythonComputer/blob/master/File-Formatting-E.py
+**File Editing**
+**Reading+Writing.py**
+*Module Used for V1*
+- https://github.com/Space-Turtle0/PythonComputer/blob/master/Reading+Writing.py
+**Exporting and Formatting**
+**Split.py** or **PythonFileHandle1**
+*Module Used for V1*
+- https://github.com/Space-Turtle0/PythonComputer/blob/master/Split.py
+       - https://github.com/Space-Turtle0/PythonComputer/blob/master/PythonFileHandle1.py
+**Opening .txt**
+**PythonHandling11**
+*Module Used for V1*
+- https://github.com/Space-Turtle0/PythonComputer/blob/master/PythonHandling11.py
+>Use these files to help you with syntax ^^^
+
 
 
 # Warning:
@@ -58,3 +84,4 @@ If you need to reset values or import modules. Do it there!
 ***Have any questions? DM Space#1613*** 
 - On Discord
 Program Built by Space Turtle / Space
+Have fun! 😁
