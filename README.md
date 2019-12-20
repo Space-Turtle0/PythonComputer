@@ -15,11 +15,18 @@ Be sure to check 2019py out!
 VSC: https://code.visualstudio.com/
 PyCharm: https://www.jetbrains.com/pycharm/download/
 3) Follow their installation process
-4) Open the Zip Folder
-5) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
-6) Congrats! You now have access to the files.
+4) Download https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py
+5) Open the Zip Folder
+6) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
+7) Congrats! You now have access to the folder.
 If you just want to run it without editing...
 Open it with command prompt.
+
+# Help! What do I download?
+Well it really depends on you.
+The new python PC
+- https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py
+
 
 # Warning:
 Any unintentional change may cause a problem during execution! 
