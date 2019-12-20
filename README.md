@@ -14,9 +14,12 @@ Be sure to check 2019py out!
 2) Download Visual Studio Code or PyCharm
 VSC: https://code.visualstudio.com/
 PyCharm: https://www.jetbrains.com/pycharm/download/
-3) Open the Zip Folder
-4) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
-5) Congrats! You now have access to the files.
+3) Follow their installation process
+4) Open the Zip Folder
+5) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
+6) Congrats! You now have access to the files.
+If you just want to run it without editing...
+Open it with command prompt.
 
 # Warning:
 Any unintentional change may cause a problem during execution! 
@@ -45,3 +48,6 @@ filetf == False
 This is an example startup.
 If you need to reset values or import modules. Do it there!
 
+***Have any questions? DM Space#1613*** 
+- On Discord
+Program Built by Space Turtle / Space
