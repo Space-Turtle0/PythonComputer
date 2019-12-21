@@ -1,11 +1,30 @@
 import time, webbrowser, os, warnings
 time.sleep(3)
-websitechoicetf == False
-filetf == False
+"websitechoicetf" == 0
+"filetf" == False
 print("Booting...")
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    print(f"{OKGREEN}Attempting to log in...{ENDC}")
 psword =input("Please enter your password ")
 if psword ==("Bluecore"):
-    print("Logging in...")
+    class bcolors:
+        HEADER = '\033[95m'
+        OKBLUE = '\033[94m'
+        OKGREEN = '\033[92m'
+        WARNING = '\033[93m'
+        FAIL = '\033[91m'
+        ENDC = '\033[0m'
+        BOLD = '\033[1m'
+        UNDERLINE = '\033[4m'
+        print(f"{WARNING}Logging in...{ENDC}")
     time.sleep(2)
     print("Welcome to the Home Screen. This computer is not built for real life useage..")
     print("This computer is soley for the use of testing.")
@@ -25,7 +44,7 @@ if psword ==("Bluecore"):
             Logs.close()
         if appchoice == "Open":
             print("Opening!")
-            if filetf == True:
+            if "filetf" == True:
                 print("Accessing file...")
                 open(save1)
             else:
@@ -37,7 +56,7 @@ if psword ==("Bluecore"):
             webchoice=input("Open bookmarks?")
             if webchoice == "yes":
                 print("Loading...")
-                if websitechoicetf == True:
+                if "websitechoicetf" == 1:
                     print("Opening" + linksave)
                     Logsweb = open(r"Logs.txt", "a")
                     webbrowser.open("www." + linksave, new=0, autoraise=True)
@@ -102,8 +121,6 @@ if psword ==("Bluecore"):
             else:
                 print("Invalid input")
 
-        des = input("Do you want to proceed home/destination? (y/n)")
-
         if appchoice ==("RMGame"):
             print("Please wait, downloading game...")
             time.sleep(5)
@@ -128,16 +145,32 @@ if psword ==("Bluecore"):
             time.sleep(2)
         if appchoice == "Console":
             print("Launching a instance")
-            warnings.warn('Launching instance requires credentials!')
+            class bcolors:
+                HEADER = '\033[95m'
+                OKBLUE = '\033[94m'
+                OKGREEN = '\033[92m'
+                WARNING = '\033[93m'
+                FAIL = '\033[91m'
+                ENDC = '\033[0m'
+                BOLD = '\033[1m'
+                UNDERLINE = '\033[4m'
+                print(f"{FAIL}Instance requires credentials to start...{ENDC}")
             time.sleep(2)
             username1 =input("Username: ")
             if username1 == "BlueCore":
                 password1 =input("Password: ")
                 if password1 == "RedApple":
-                    warnings.warn("Attempting to start...")
                     instancename =input("Instance Name:")
-                    SSH = input("Instance name: ")
-                    os.system('start "SSH":')
+                    time.sleep(2)
+                    warnings.warn("Attempting to start...")
+                    time.sleep(2)
+                    print("Starting " + instancename)
+                    os.system('start "SSH Client":')
+                    time.sleep(3)
+                    class bcolors:
+                        OKGREEN = '\033[92m'
+                        print("Sucessfully Started " + instancename)
+                    
 
 
         if appchoice == "Settings-2":
@@ -173,7 +206,7 @@ if psword ==("Bluecore"):
                         save1 =input("What do you want this called? ")
                         save1 == fileopen
                         print("Saved as" + save1 + ".")
-                        filetf == True
+                        "filetf" == True
             if websitechoiceconfig == "Link":
                 linkpl = input("Copy and Paste your link here.. ")
                 des2008 = input("What do you want me to do with it? ")
@@ -182,7 +215,7 @@ if psword ==("Bluecore"):
                 if des2008 == "Save":
                     linksave == linkpl
                     print("Saved "+ linksave)
-                    websitechoicetf == True
+                    websitechoicetf == 1
             if appchoice == "Credits":
                 print("Loading...")
                 time.sleep(2)
