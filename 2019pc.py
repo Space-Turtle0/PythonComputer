@@ -57,10 +57,10 @@ if psword ==("Bluecore"):
             if webchoice == "yes":
                 print("Loading...")
                 if "websitechoicetf" == 1:
-                    print("Opening" + linksave)
+                    print("Opening" + linkpl)
                     Logsweb = open(r"Logs.txt", "a")
-                    webbrowser.open("www." + linksave, new=0, autoraise=True)
-                    Logsweb.write("Visited: www." + linksave + "\n")
+                    webbrowser.open("www." + linkpl, new=0, autoraise=True)
+                    Logsweb.write("Visited: www." + linkpl + "\n")
                 else:
                     print("Sorry, you have no bookmark!")
                     print("Set it up in Config!")
@@ -141,8 +141,9 @@ if psword ==("Bluecore"):
             print("Checking status of the game...")
             print("Starting connection...")
             time.sleep(3)
-            webbrowser.open('www.roblox.com/games/1466995005/Ragdoll-Mayhem?refPageId=d99e069d-944a-4f48-b55c-34352d088da1, new=0, autoraise=True')
+            webbrowser.open('www.roblox.com/games/1466995005/Ragdoll-Mayhem?refPageId=d99e069d-944a-4f48-b55c-34352d088da1', new=0, autoraise=True)
             time.sleep(2)
+
         if appchoice == "Console":
             print("Launching a instance")
             class bcolors:
@@ -170,7 +171,7 @@ if psword ==("Bluecore"):
                     class bcolors:
                         OKGREEN = '\033[92m'
                         print("Sucessfully Started " + instancename)
-                    
+
 
 
         if appchoice == "Settings-2":
@@ -209,26 +210,28 @@ if psword ==("Bluecore"):
                         "filetf" == True
             if websitechoiceconfig == "Link":
                 linkpl = input("Copy and Paste your link here.. ")
-                des2008 = input("What do you want me to do with it? ")
+                des2008 = input("Should I open it? ")
+                "websitechoicetf" == 1
                 if des2008 == "Open":
                     webbrowser.open("www." + linkpl, new=0, autoraise=True)
-                if des2008 == "Save":
-                    linksave == linkpl
-                    print("Saved "+ linksave)
-                    websitechoicetf == 1
-            if appchoice == "Credits":
-                print("Loading...")
-                time.sleep(2)
-                print("Thank you for using my program!")
-                print("I've spent a lot of time on this project and its been wonderful!")
-                print("If you don't know what this is...")
-                print("Its a simple .py file that tried to show many modules/python features!")
-                print("Hopefully you took something away from this!")
-                print("Program made by Space")
-                print("aka: Space Turtle!")
-                print("Check out my other stuff on GitHub!")
-                time.sleep(1)
-                webbrowser.open("https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py", new=0, autoraise=True)
+                else:
+                    print("Alright, I saved the link.")
+                    print("If you want to remove it, come back to this!")
+               
+
+        if appchoice == "Credits":
+             print("Loading...")
+             time.sleep(2)
+             print("Thank you for using my program!")
+             print("I've spent a lot of time on this project and its been wonderful!")
+             print("If you don't know what this is...")
+             print("Its a simple .py file that tried to show many modules/python features!")
+             print("Hopefully you took something away from this!")
+             print("Program made by Space")
+             print("aka: Space Turtle!")
+             print("Check out my other stuff on GitHub!")
+             time.sleep(1)
+             webbrowser.open("https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py", new=0, autoraise=True)
 
 
 else:
