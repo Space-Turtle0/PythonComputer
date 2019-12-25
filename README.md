@@ -100,8 +100,8 @@ Use that ^ to move on with the file!
 ```
 import time, webbrowser, os, warnings
 time.sleep(3)
-websitechoicetf == False
-filetf == False
+websitechoicetf = False
+filetf = False
 ```
 This is an example startup.
 If you need to reset values or import modules. Do it there!
