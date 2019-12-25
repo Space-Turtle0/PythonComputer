@@ -1,8 +1,12 @@
 import time, webbrowser, os, warnings
+print("Reseting Services...")
 time.sleep(3)
-"websitechoicetf" == 0
-"filetf" == False
+websitechoicetf = 0
+filetf = False
 print("Booting...")
+time.sleep(2)
+print("No Domain Found...")
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -13,8 +17,8 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     print(f"{OKGREEN}Attempting to log in...{ENDC}")
-psword =input("Please enter your password ")
-if psword ==("Bluecore"):
+psword = input("Please enter your password ")
+if psword == ("Bluecore"):
     class bcolors:
         HEADER = '\033[95m'
         OKBLUE = '\033[94m'
@@ -29,6 +33,7 @@ if psword ==("Bluecore"):
     print("Welcome to the Home Screen. This computer is not built for real life useage..")
     print("This computer is soley for the use of testing.")
     time.sleep(2)
+
 
     des = "y"
     while des == "y":
@@ -176,6 +181,7 @@ if psword ==("Bluecore"):
 
         if appchoice == "Settings-2":
             os.system('start ms-settings:')
+
         if appchoice == "Prime":
             num =int(input("Number to test: "))
             if num > 1:
@@ -194,7 +200,7 @@ if psword ==("Bluecore"):
             print("If you are saving a file...")
             print("Please enter the FULL PATH!")
             print("Otherwise it will open a new file with that name!")
-            websitechoiceconfig = input("What should I open? (File or Link?) ")
+            websitechoiceconfig =input("What should I open? (File or Link?) ")
             if websitechoiceconfig == "File":
                 print("Please wait...")
                 fileopen = input("Please input a files name or path! ")
@@ -207,17 +213,18 @@ if psword ==("Bluecore"):
                         save1 =input("What do you want this called? ")
                         save1 == fileopen
                         print("Saved as" + save1 + ".")
-                        "filetf" == True
+                        filetf = True
+
             if websitechoiceconfig == "Link":
                 linkpl = input("Copy and Paste your link here.. ")
                 des2008 = input("Should I open it? ")
-                "websitechoicetf" == 1
+                websitechoicetf = 1
                 if des2008 == "Open":
                     webbrowser.open("www." + linkpl, new=0, autoraise=True)
                 else:
                     print("Alright, I saved the link.")
                     print("If you want to remove it, come back to this!")
-               
+
 
         if appchoice == "Credits":
              print("Loading...")
@@ -233,6 +240,65 @@ if psword ==("Bluecore"):
              time.sleep(1)
              webbrowser.open("https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py", new=0, autoraise=True)
 
+        if appchoice == "WEB":
+            print("uwu, you found this ")
+            print("Well then bye!")
+        if appchoice == "Domain":
+            print("Loading...")
+            time.sleep(2)
+            if Register == False:
+                class bcolors:
+                    HEADER = '\033[95m'
+                    OKBLUE = '\033[94m'
+                    OKGREEN = '\033[92m'
+                    WARNING = '\033[93m'
+                    FAIL = '\033[91m'
+                    ENDC = '\033[0m'
+                    BOLD = '\033[1m'
+                    UNDERLINE = '\033[4m'
+                    print(f"{FAIL}Launching Domain...{ENDC}")
+                    f = open("Logs.txt", "w+")
+                    domainname = input("Domain name: ")
+                    domainpassword = input("Domain Password: ")
+                    f.write(domainname)
+                    f.write("\n")
+                    f.write(domainpassword)
+                    with open('Logs.txt', 'r') as f:
+                        contents = [line.strip() for line in f.readlines()]
+                    username = contents[0]
+                    pw = contents[1]
+                    print("Complete..")
+                    print("Domain Username:" + username)
+                    print("Domain Password:" + pw)
+                    f.close()
+                    Register = True
+            else:
+                print("You already have a Domain Setup...")
+                Domaininput =input("Do you want to edit/delete this?")
+                if Domaininput == "yes":
+                    f = open("Logs.txt", "w+")
+                    with open("Logs.txt", "w") as f:
+                        f.write("")
+                        print("Deleting...")
+                        time.sleep(2)
+                        print("Complete")
+                        time.sleep(2)
+                        print("To Edit this, please come back and create a new Domain!")
+                        print("To Log in with this, please go to DomainConsole!")
+                        Register = False
+        if appchoice == "Exit":
+            print("...")
+            time.sleep(2)
+            exit("Logging out...")
+        if appchoice == "DomainConsole":
+            print("waiting...")
+            if Register == True:
+                print(f"{bcolors.WARNING}Launching!{bcolors.ENDC}")
+                os.system('start "Domain VENV":')
+            else:
+                print(f"{bcolors.FAIL}You don't have a domain! Please set one up!{bcolors.ENDC}")
+                print(f"{bcolors.FAIL}Failed to Launch!{bcolors.ENDC}")
 
-else:
-    exit("Incorrect Password...")
+            
+
+
