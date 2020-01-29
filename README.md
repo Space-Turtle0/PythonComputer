@@ -102,14 +102,19 @@ if appchoice == "Your Portion Name":
 Use that ^ to move on with the file!
 
 >>> Setting up before execution
+*This type of execution should be used only if you need to reset variables on startup*
+*If you need to compare values inside the `while des == y` loop, place it before asking what to open*
+
 ```
 import time, webbrowser, os, warnings
 time.sleep(3)
 websitechoicetf = False
 filetf = False
 ```
-This is an example startup.
-If you need to reset values or import modules. Do it there!
+This is an example startup as soon as you run the program.
+
+> **If you need to reset values inside the loop**
+Place your `define` statements after asking about `appchoice`!
 
 ***Have any questions? DM Space#1613*** 
 - On Discord
