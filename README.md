@@ -43,7 +43,7 @@ Well it really depends on you.
 
 **Computer.py**
 
-*Old version, not being worked on...*
+*Skeleton of the credential process and `appchoice`*
 
 *This is V1*
 
