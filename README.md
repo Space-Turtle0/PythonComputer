@@ -48,7 +48,7 @@ Well it really depends on you.
 
 *Skeleton of the credential process and `appchoice`*
 
-*This is V1*
+*This was called V1 but now is called the "Skelly"*
 
 - https://github.com/Space-Turtle0/PythonComputer/blob/master/Computer.py
 
