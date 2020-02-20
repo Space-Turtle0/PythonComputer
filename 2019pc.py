@@ -1,11 +1,26 @@
-import time, webbrowser, os, warnings
+import time, webbrowser, os, warnings, random, math, datetime
+currentDT = datetime.datetime.now()
+print (str(currentDT))
 print("Reseting Services...")
 time.sleep(3)
+PCLOGS = open("SetupLogs.txt","a")
+currentDT = datetime.datetime.now()
+PCLOGS.write(str(currentDT) + "\n")
+# "\n"
+PCLOGS.write("Setting up files... \n")
+PCLOGS.write("No Domain Found, proceeding as root user \n")
+PCLOGS.write("Proceeding as OSBOOT 3.6.7 \n")
+PCLOGS.write("Root User logging in...\n")
+PCLOGS.write("Closing Terminal! \n")
+PCLOGS.write("----------------\n")
+PCLOGS.close()
 websitechoicetf = 0
 filetf = False
+Register = False
 print("Booting...")
 time.sleep(2)
 print("No Domain Found...")
+#Loading..................
 
 class bcolors:
     HEADER = '\033[95m'
@@ -30,6 +45,10 @@ if psword == ("Bluecore"):
         UNDERLINE = '\033[4m'
         print(f"{WARNING}Logging in...{ENDC}")
     time.sleep(2)
+    PCLOGS = open("SetupLogs.txt","a")
+    PCLOGS.write("Logged in as ROOT USER \n")
+    PCLOGS.write("---------------------\n")
+    PCLOGS.close()
     print("Welcome to the Home Screen. This computer is not built for real life useage..")
     print("This computer is soley for the use of testing.")
     time.sleep(2)
@@ -207,7 +226,7 @@ if psword == ("Bluecore"):
                 des2009 = input("What do you want me to do with it? ")
                 if des2009 == "Open":
                     print("Opening" + fileopen)
-                    Bookmarkfile = open(r, fileopen, "a")
+                    Bookmarkfile = open("r", fileopen, "a")
                     if des2009 == "Save":
                         print("Saving!")
                         save1 =input("What do you want this called? ")
@@ -298,7 +317,73 @@ if psword == ("Bluecore"):
             else:
                 print(f"{bcolors.FAIL}You don't have a domain! Please set one up!{bcolors.ENDC}")
                 print(f"{bcolors.FAIL}Failed to Launch!{bcolors.ENDC}")
+        if appchoice == "Notes":
+          print("Loading...")
+          notesyn =input("Are you writting a new file? (y/n) ")
+          if notesyn == "y":
+            print("Loading...")
+            time.sleep(2)
+            notestxt =input("Name of the file:(add file ending at end! (.txt)) ")
+            notesx = open("notestxt.txt" ,"w")
+            notesx.close()
+            notesx =open("notestxt.txt","a")
+            writenote =input("What would you like to write? ")
+            notesx.write(writenote)
+            notesx.close()
+            def writenotes():
+              notesx =open("notestxt.txt","a")
+              writenote =input("What would you like to write? ")
+              notesx.write(writenote + "\n")
+              notesx.close()
+            noteagain =input("Would you like to write again?  ")
+            if noteagain == "yes":
+              writenotes()
+            else:
+              print("Reading you lines!")
+              notesx.close()
+              notesx = open("notestxt.txt","r")
+              notesx.readlines(1)
+              notesx.close
+        if appchoice == "Time":
+          print("Current Year is: %d" % currentDT.year + "\n")
+          print("Current Month is: %d" % currentDT.month + "\n")
+          print("Current Day is: %d" % currentDT.day + "\n")
+          print("Current Hour is: %d" % currentDT.hour + "\n")
+          print("Current Minute is: %d" % currentDT.minute + "\n")
+          print("Current Second is: %d" % currentDT.second + "\n")
+          print("Current Microsecond is: %d" % currentDT.microsecond + "\n")
+        if apphoice == "Seating Chart":
+          import random
+          '''
+          numstu =int(input("How many students?"))
 
+          words = ['Me', 'Merry', 'Help', 'Please', 'Christmas']
+          random.shuffle(words)
+          '''
+          list = []
+          i = 0
+          a = 0
+          max =int(input("Number of students: "))
+          table =int(input("Number of tables? "))
+          if max % table == 0:
+            print("Check 1 complete")
+            while i < max:
+              a = input("Please enter student" + str(i) +"'s" +  " name : ")
+            list.append(a)
+            i+=1
+          random.shuffle(list)    
+          print(list)
+          for x in range(table):
+            #a + 1
+            print(a)
+          else:
+            print("Sorry! You don't have enough tables or have a odd amount of tables")
+  
+
+
+              
+            
             
 
+            
 
