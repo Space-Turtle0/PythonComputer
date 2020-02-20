@@ -1,12 +1,20 @@
 import time, webbrowser, os, warnings, random, math, datetime
 currentDT = datetime.datetime.now()
-print (str(currentDT))
+print(str(currentDT))
 print("Reseting Services...")
+time.sleep(2)
+print("New Account Required!")
 time.sleep(3)
-PCLOGS = open("SetupLogs.txt","a")
+ssuser = input("New Username: ")
+sspass = input("New Password: ")
+print("Setup Success!")
+PCLOGS = open("SetupLogs.txt", "a")
 currentDT = datetime.datetime.now()
 PCLOGS.write(str(currentDT) + "\n")
 # "\n"
+PCLOGS.write("Used " + ssuser + "as Username to log in \n")
+PCLOGS.write("Used " + sspass + "as Password to log in \n")
+PCLOGS.write("Setup is working /-")
 PCLOGS.write("Setting up files... \n")
 PCLOGS.write("No Domain Found, proceeding as root user \n")
 PCLOGS.write("Proceeding as OSBOOT 3.6.7 \n")
@@ -20,7 +28,9 @@ Register = False
 print("Booting...")
 time.sleep(2)
 print("No Domain Found...")
+
 #Loading..................
+
 
 class bcolors:
     HEADER = '\033[95m'
@@ -32,8 +42,14 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     print(f"{OKGREEN}Attempting to log in...{ENDC}")
+usernamestart = input("Username: ")
+if usernamestart == ssuser:
+    print("Acessing domain!")
+else:
+    exit("Invalid Domain/Username")
 psword = input("Please enter your password ")
-if psword == ("Bluecore"):
+if psword == (sspass):
+
     class bcolors:
         HEADER = '\033[95m'
         OKBLUE = '\033[94m'
@@ -44,22 +60,24 @@ if psword == ("Bluecore"):
         BOLD = '\033[1m'
         UNDERLINE = '\033[4m'
         print(f"{WARNING}Logging in...{ENDC}")
+
     time.sleep(2)
-    PCLOGS = open("SetupLogs.txt","a")
+    PCLOGS = open("SetupLogs.txt", "a")
     PCLOGS.write("Logged in as ROOT USER \n")
     PCLOGS.write("---------------------\n")
     PCLOGS.close()
-    print("Welcome to the Home Screen. This computer is not built for real life useage..")
+    print(
+        "Welcome to the Home Screen. This computer is not built for real life useage.."
+    )
     print("This computer is soley for the use of testing.")
     time.sleep(2)
-
 
     des = "y"
     while des == "y":
         print("Options:")
         print("Settings, Browser, Calculator, Console, Config, Settings-2")
-        appchoice =input("What would you like to use today?")
-        if appchoice ==("Settings"):
+        appchoice = input("What would you like to use today?")
+        if appchoice == ("Settings"):
             print("Loading...")
             time.sleep(2)
             print("Connecting to document...")
@@ -75,9 +93,9 @@ if psword == ("Bluecore"):
                 print("Error: You have no save!")
                 print("Please go to Config to save a file!")
 
-        if appchoice ==("Browser"):
+        if appchoice == ("Browser"):
             print("Loading...")
-            webchoice=input("Open bookmarks?")
+            webchoice = input("Open bookmarks?")
             if webchoice == "yes":
                 print("Loading...")
                 if "websitechoicetf" == 1:
@@ -90,34 +108,32 @@ if psword == ("Bluecore"):
                     print("Set it up in Config!")
 
             else:
-                website=input("What would you like to search? Format: python.org ")
-                print("Opening "+ "www."+website)
+                website = input(
+                    "What would you like to search? Format: python.org ")
+                print("Opening " + "www." + website)
                 time.sleep(1)
-                print("Requesting www."+website, "with chrome")
+                print("Requesting www." + website, "with chrome")
                 time.sleep(1)
-                webbrowser.open("www."+ website,new=0, autoraise=True)
+                webbrowser.open("www." + website, new=0, autoraise=True)
                 Logsweb = open(r"Logs.txt", "a")
-                Logsweb.write("Visited: www."+ website + "\n")
+                Logsweb.write("Visited: www." + website + "\n")
                 Logsweb.close()
-        if appchoice ==("Calculator"):
+        if appchoice == ("Calculator"):
+
             def add(x, y):
                 return x + y
-
 
             # This function subtracts two numbers
             def subtract(x, y):
                 return x - y
 
-
             # This function multiplies two numbers
             def multiply(x, y):
                 return x * y
 
-
             # This function divides two numbers
             def divide(x, y):
                 return x / y
-
 
             print("Select operation.")
             print("1.Add")
@@ -145,7 +161,7 @@ if psword == ("Bluecore"):
             else:
                 print("Invalid input")
 
-        if appchoice ==("RMGame"):
+        if appchoice == ("RMGame"):
             print("Please wait, downloading game...")
             time.sleep(5)
             print("Aquiring plugin...")
@@ -161,15 +177,21 @@ if psword == ("Bluecore"):
             print("Running file...")
             time.sleep(3)
             print("Welcome to the RM game.")
-            print("This game is undergoing high improvements.So please be mindful of the game..")
+            print(
+                "This game is undergoing high improvements.So please be mindful of the game.."
+            )
             print("Checking status of the game...")
             print("Starting connection...")
             time.sleep(3)
-            webbrowser.open('www.roblox.com/games/1466995005/Ragdoll-Mayhem?refPageId=d99e069d-944a-4f48-b55c-34352d088da1', new=0, autoraise=True)
+            webbrowser.open(
+                'www.roblox.com/games/1466995005/Ragdoll-Mayhem?refPageId=d99e069d-944a-4f48-b55c-34352d088da1',
+                new=0,
+                autoraise=True)
             time.sleep(2)
 
         if appchoice == "Console":
             print("Launching a instance")
+
             class bcolors:
                 HEADER = '\033[95m'
                 OKBLUE = '\033[94m'
@@ -180,29 +202,29 @@ if psword == ("Bluecore"):
                 BOLD = '\033[1m'
                 UNDERLINE = '\033[4m'
                 print(f"{FAIL}Instance requires credentials to start...{ENDC}")
+
             time.sleep(2)
-            username1 =input("Username: ")
+            username1 = input("Username: ")
             if username1 == "BlueCore":
-                password1 =input("Password: ")
+                password1 = input("Password: ")
                 if password1 == "RedApple":
-                    instancename =input("Instance Name:")
+                    instancename = input("Instance Name:")
                     time.sleep(2)
                     warnings.warn("Attempting to start...")
                     time.sleep(2)
                     print("Starting " + instancename)
                     os.system('start "SSH Client":')
                     time.sleep(3)
+
                     class bcolors:
                         OKGREEN = '\033[92m'
                         print("Sucessfully Started " + instancename)
-
-
 
         if appchoice == "Settings-2":
             os.system('start ms-settings:')
 
         if appchoice == "Prime":
-            num =int(input("Number to test: "))
+            num = int(input("Number to test: "))
             if num > 1:
                 for i in range(2, num):
                     if (num % i) == 0:
@@ -219,7 +241,7 @@ if psword == ("Bluecore"):
             print("If you are saving a file...")
             print("Please enter the FULL PATH!")
             print("Otherwise it will open a new file with that name!")
-            websitechoiceconfig =input("What should I open? (File or Link?) ")
+            websitechoiceconfig = input("What should I open? (File or Link?) ")
             if websitechoiceconfig == "File":
                 print("Please wait...")
                 fileopen = input("Please input a files name or path! ")
@@ -229,7 +251,7 @@ if psword == ("Bluecore"):
                     Bookmarkfile = open("r", fileopen, "a")
                     if des2009 == "Save":
                         print("Saving!")
-                        save1 =input("What do you want this called? ")
+                        save1 = input("What do you want this called? ")
                         save1 == fileopen
                         print("Saved as" + save1 + ".")
                         filetf = True
@@ -244,20 +266,26 @@ if psword == ("Bluecore"):
                     print("Alright, I saved the link.")
                     print("If you want to remove it, come back to this!")
 
-
         if appchoice == "Credits":
-             print("Loading...")
-             time.sleep(2)
-             print("Thank you for using my program!")
-             print("I've spent a lot of time on this project and its been wonderful!")
-             print("If you don't know what this is...")
-             print("Its a simple .py file that tried to show many modules/python features!")
-             print("Hopefully you took something away from this!")
-             print("Program made by Space")
-             print("aka: Space Turtle!")
-             print("Check out my other stuff on GitHub!")
-             time.sleep(1)
-             webbrowser.open("https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py", new=0, autoraise=True)
+            print("Loading...")
+            time.sleep(2)
+            print("Thank you for using my program!")
+            print(
+                "I've spent a lot of time on this project and its been wonderful!"
+            )
+            print("If you don't know what this is...")
+            print(
+                "Its a simple .py file that tried to show many modules/python features!"
+            )
+            print("Hopefully you took something away from this!")
+            print("Program made by Space")
+            print("aka: Space Turtle!")
+            print("Check out my other stuff on GitHub!")
+            time.sleep(1)
+            webbrowser.open(
+                "https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py",
+                new=0,
+                autoraise=True)
 
         if appchoice == "WEB":
             print("uwu, you found this ")
@@ -266,6 +294,7 @@ if psword == ("Bluecore"):
             print("Loading...")
             time.sleep(2)
             if Register == False:
+
                 class bcolors:
                     HEADER = '\033[95m'
                     OKBLUE = '\033[94m'
@@ -293,7 +322,7 @@ if psword == ("Bluecore"):
                     Register = True
             else:
                 print("You already have a Domain Setup...")
-                Domaininput =input("Do you want to edit/delete this?")
+                Domaininput = input("Do you want to edit/delete this?")
                 if Domaininput == "yes":
                     f = open("Logs.txt", "w+")
                     with open("Logs.txt", "w") as f:
@@ -302,8 +331,11 @@ if psword == ("Bluecore"):
                         time.sleep(2)
                         print("Complete")
                         time.sleep(2)
-                        print("To Edit this, please come back and create a new Domain!")
-                        print("To Log in with this, please go to DomainConsole!")
+                        print(
+                            "To Edit this, please come back and create a new Domain!"
+                        )
+                        print(
+                            "To Log in with this, please go to DomainConsole!")
                         Register = False
         if appchoice == "Exit":
             print("...")
@@ -315,75 +347,73 @@ if psword == ("Bluecore"):
                 print(f"{bcolors.WARNING}Launching!{bcolors.ENDC}")
                 os.system('start "Domain VENV":')
             else:
-                print(f"{bcolors.FAIL}You don't have a domain! Please set one up!{bcolors.ENDC}")
+                print(
+                    f"{bcolors.FAIL}You don't have a domain! Please set one up!{bcolors.ENDC}"
+                )
                 print(f"{bcolors.FAIL}Failed to Launch!{bcolors.ENDC}")
         if appchoice == "Notes":
-          print("Loading...")
-          notesyn =input("Are you writting a new file? (y/n) ")
-          if notesyn == "y":
             print("Loading...")
-            time.sleep(2)
-            notestxt =input("Name of the file:(add file ending at end! (.txt)) ")
-            notesx = open("notestxt.txt" ,"w")
-            notesx.close()
-            notesx =open("notestxt.txt","a")
-            writenote =input("What would you like to write? ")
-            notesx.write(writenote)
-            notesx.close()
-            def writenotes():
-              notesx =open("notestxt.txt","a")
-              writenote =input("What would you like to write? ")
-              notesx.write(writenote + "\n")
-              notesx.close()
-            noteagain =input("Would you like to write again?  ")
-            if noteagain == "yes":
-              writenotes()
-            else:
-              print("Reading you lines!")
-              notesx.close()
-              notesx = open("notestxt.txt","r")
-              notesx.readlines(1)
-              notesx.close
+            notesyn = input("Are you writting a new file? (y/n) ")
+            if notesyn == "y":
+                print("Loading...")
+                time.sleep(2)
+                notestxt = input(
+                    "Name of the file:(add file ending at end! (.txt)) ")
+                notesx = open("notestxt.txt", "w")
+                notesx.close()
+                notesx = open("notestxt.txt", "a")
+                writenote = input("What would you like to write? ")
+                notesx.write(writenote)
+                notesx.close()
+
+                def writenotes():
+                    notesx = open("notestxt.txt", "a")
+                    writenote = input("What would you like to write? ")
+                    notesx.write(writenote + "\n")
+                    notesx.close()
+
+                noteagain = input("Would you like to write again?  ")
+                if noteagain == "yes":
+                    writenotes()
+                else:
+                    print("Reading you lines!")
+                    notesx.close()
+                    notesx = open("notestxt.txt", "r")
+                    notesx.readlines(1)
+                    notesx.close
         if appchoice == "Time":
-          print("Current Year is: %d" % currentDT.year + "\n")
-          print("Current Month is: %d" % currentDT.month + "\n")
-          print("Current Day is: %d" % currentDT.day + "\n")
-          print("Current Hour is: %d" % currentDT.hour + "\n")
-          print("Current Minute is: %d" % currentDT.minute + "\n")
-          print("Current Second is: %d" % currentDT.second + "\n")
-          print("Current Microsecond is: %d" % currentDT.microsecond + "\n")
-        if apphoice == "Seating Chart":
-          import random
-          '''
+            print("Current Year is: %d" % currentDT.year + "\n")
+            print("Current Month is: %d" % currentDT.month + "\n")
+            print("Current Day is: %d" % currentDT.day + "\n")
+            print("Current Hour is: %d" % currentDT.hour + "\n")
+            print("Current Minute is: %d" % currentDT.minute + "\n")
+            print("Current Second is: %d" % currentDT.second + "\n")
+            print("Current Microsecond is: %d" % currentDT.microsecond + "\n")
+        if appchoice == "Seating Chart":
+            '''
           numstu =int(input("How many students?"))
 
           words = ['Me', 'Merry', 'Help', 'Please', 'Christmas']
           random.shuffle(words)
           '''
-          list = []
-          i = 0
-          a = 0
-          max =int(input("Number of students: "))
-          table =int(input("Number of tables? "))
-          if max % table == 0:
-            print("Check 1 complete")
-            while i < max:
-              a = input("Please enter student" + str(i) +"'s" +  " name : ")
-            list.append(a)
-            i+=1
-          random.shuffle(list)    
-          print(list)
-          for x in range(table):
-            #a + 1
-            print(a)
-          else:
-            print("Sorry! You don't have enough tables or have a odd amount of tables")
-  
-
-
-              
-            
-            
-
-            
-
+            list = []
+            i = 0
+            a = 0
+            maxo = int(input("Number of students: "))
+            table = int(input("Number of tables? "))
+            if maxo % table == 0:
+                print("Check 1 complete")
+                while i < maxo:
+                    a = input("Please enter student" + str(i) + "'s" +
+                              " name : ")
+                    list.append(a)
+                    i += 1
+                random.shuffle(list)
+                print(list)
+            for x in range(table):
+                  #a + 1
+                  print(a)
+            else:
+                print(
+                     "Sorry! You don't have enough tables or have a odd amount of tables"
+                 )
