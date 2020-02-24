@@ -1,27 +1,54 @@
 import time, webbrowser, os, warnings, random, math, datetime
+def colortext():
+  class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+currentDT = datetime.datetime.now()
+PCProcessLOGS = open("PCProcessLOGS","a")
+PCProcessLOGS.write("Setting up services... \n")
+PCProcessLOGS.write(str(currentDT) + "\n")
+PCProcessLOGS.write("------------------\n")
+PCProcessLOGS.close
 currentDT = datetime.datetime.now()
 print(str(currentDT))
 print("Reseting Services...")
+time.sleep(2)
+print("Creating processes")
+print("No account file found... [Error Code 5] ")
+PCLOGS =open("SetupLogs.txt")
 time.sleep(2)
 print("New Account Required!")
 time.sleep(3)
 ssuser = input("New Username: ")
 sspass = input("New Password: ")
+print("Setting you up as the admin account...")
 print("Setup Success!")
+accountstat = 'Admin'
 PCLOGS = open("SetupLogs.txt", "a")
 currentDT = datetime.datetime.now()
 PCLOGS.write(str(currentDT) + "\n")
 # "\n"
-PCLOGS.write("Used " + ssuser + "as Username to log in \n")
-PCLOGS.write("Used " + sspass + "as Password to log in \n")
+PCLOGS.write("Used " + ssuser + " as the Username to log in \n")
+PCLOGS.write("Used " + sspass + " as the Password to log in \n")
 PCLOGS.write("Setup is working /-")
 PCLOGS.write("Setting up files... \n")
 PCLOGS.write("No Domain Found, proceeding as root user \n")
-PCLOGS.write("Proceeding as OSBOOT 3.6.7 \n")
+PCLOGS.write("Proceeding as OSTURTLESTRSPPER 3.6.8 \n")
 PCLOGS.write("Root User logging in...\n")
 PCLOGS.write("Closing Terminal! \n")
 PCLOGS.write("----------------\n")
 PCLOGS.close()
+AccountManager =open("AccountProcess.txt","a")
+AccountManager.write("Accounts Currently Stored: \n")
+AccountManager.write("ROOT USER: " + ssuser + "\n")
+AccountManager.write("--------------------------\n")
+AccountManager.close
 websitechoicetf = 0
 filetf = False
 Register = False
@@ -30,7 +57,6 @@ time.sleep(2)
 print("No Domain Found...")
 
 #Loading..................
-
 
 class bcolors:
     HEADER = '\033[95m'
@@ -78,6 +104,11 @@ if psword == (sspass):
         print("Settings, Browser, Calculator, Console, Config, Settings-2")
         appchoice = input("What would you like to use today?")
         if appchoice == ("Settings"):
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Loading...")
             time.sleep(2)
             print("Connecting to document...")
@@ -85,6 +116,11 @@ if psword == (sspass):
             print(Logs.readlines())
             Logs.close()
         if appchoice == "Open":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Opening!")
             if "filetf" == True:
                 print("Accessing file...")
@@ -94,6 +130,11 @@ if psword == (sspass):
                 print("Please go to Config to save a file!")
 
         if appchoice == ("Browser"):
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Loading...")
             webchoice = input("Open bookmarks?")
             if webchoice == "yes":
@@ -119,6 +160,11 @@ if psword == (sspass):
                 Logsweb.write("Visited: www." + website + "\n")
                 Logsweb.close()
         if appchoice == ("Calculator"):
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
 
             def add(x, y):
                 return x + y
@@ -162,6 +208,11 @@ if psword == (sspass):
                 print("Invalid input")
 
         if appchoice == ("RMGame"):
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Please wait, downloading game...")
             time.sleep(5)
             print("Aquiring plugin...")
@@ -190,6 +241,11 @@ if psword == (sspass):
             time.sleep(2)
 
         if appchoice == "Console":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Launching a instance")
 
             class bcolors:
@@ -221,9 +277,19 @@ if psword == (sspass):
                         print("Sucessfully Started " + instancename)
 
         if appchoice == "Settings-2":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             os.system('start ms-settings:')
 
         if appchoice == "Prime":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             num = int(input("Number to test: "))
             if num > 1:
                 for i in range(2, num):
@@ -237,6 +303,11 @@ if psword == (sspass):
                 print(num, "is not a prime number")
 
         if appchoice == "Config":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Get your path/link ready!")
             print("If you are saving a file...")
             print("Please enter the FULL PATH!")
@@ -257,6 +328,11 @@ if psword == (sspass):
                         filetf = True
 
             if websitechoiceconfig == "Link":
+                PCProcessLOGS = open("PCProcessLOGS","a")
+                PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+                PCProcessLOGS.write(str(currentDT) + "\n")
+                PCProcessLOGS.write("------------------\n")
+                PCProcessLOGS.close
                 linkpl = input("Copy and Paste your link here.. ")
                 des2008 = input("Should I open it? ")
                 websitechoicetf = 1
@@ -267,6 +343,11 @@ if psword == (sspass):
                     print("If you want to remove it, come back to this!")
 
         if appchoice == "Credits":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Loading...")
             time.sleep(2)
             print("Thank you for using my program!")
@@ -288,9 +369,19 @@ if psword == (sspass):
                 autoraise=True)
 
         if appchoice == "WEB":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("uwu, you found this ")
             print("Well then bye!")
         if appchoice == "Domain":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Loading...")
             time.sleep(2)
             if Register == False:
@@ -338,10 +429,20 @@ if psword == (sspass):
                             "To Log in with this, please go to DomainConsole!")
                         Register = False
         if appchoice == "Exit":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("...")
             time.sleep(2)
             exit("Logging out...")
         if appchoice == "DomainConsole":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("waiting...")
             if Register == True:
                 print(f"{bcolors.WARNING}Launching!{bcolors.ENDC}")
@@ -352,6 +453,11 @@ if psword == (sspass):
                 )
                 print(f"{bcolors.FAIL}Failed to Launch!{bcolors.ENDC}")
         if appchoice == "Notes":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Loading...")
             notesyn = input("Are you writting a new file? (y/n) ")
             if notesyn == "y":
@@ -382,6 +488,11 @@ if psword == (sspass):
                     notesx.readlines(1)
                     notesx.close
         if appchoice == "Time":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             print("Current Year is: %d" % currentDT.year + "\n")
             print("Current Month is: %d" % currentDT.month + "\n")
             print("Current Day is: %d" % currentDT.day + "\n")
@@ -390,6 +501,11 @@ if psword == (sspass):
             print("Current Second is: %d" % currentDT.second + "\n")
             print("Current Microsecond is: %d" % currentDT.microsecond + "\n")
         if appchoice == "Seating Chart":
+            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+            PCProcessLOGS.write(str(currentDT) + "\n")
+            PCProcessLOGS.write("------------------\n")
+            PCProcessLOGS.close
             '''
           numstu =int(input("How many students?"))
 
@@ -417,3 +533,101 @@ if psword == (sspass):
                 print(
                      "Sorry! You don't have enough tables or have a odd amount of tables"
                  )
+        if appchoice == "Accounts":
+          PCProcessLOGS = open("PCProcessLOGS","a")
+          PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+          PCProcessLOGS.write(str(currentDT) + "\n")
+          PCProcessLOGS.write("------------------\n")
+          PCProcessLOGS.close
+          print(f"{bcolors.WARNING}Please wait, loading your accounts!{bcolors.ENDC}")
+          time.sleep(2)
+          AccountManager =open("AccountProcess.txt","r")
+          AccountManager.readlines() 
+          time.sleep(2)
+          print("Say n if you would like to switch accounts!")
+          accountnew =input("Would you like to create a new account? (y/n)")
+          if accountnew == "y":
+            print("Please wait...")
+            if accountstat == "Admin":
+              time.sleep(2)
+              print("Admin Account Registration Restricted, only 1 admin account per domain!")
+              newaccount = input("Username: ")
+              newpassword =input("Password: ")
+              PCLOGS = open("SetupLogs.txt", "a")
+              currentDT = datetime.datetime.now()
+              PCLOGS.write(str(currentDT) + "\n")
+              PCLOGS.write("Attempting to create an account... \n")
+              PCLOGS.write("Created an account: \n")
+              PCLOGS.write("Username: " + newaccount + "\n")
+              PCLOGS.write("Password: " + newpassword + "\n")
+              PCLOGS.write("------------------------")
+              PCLOGS.close
+              AccountManager =open("AccountProcess.txt","a")
+              currentDT = datetime.datetime.now()
+              AccountManager.write(str(currentDT) + "\n")
+              AccountManager.write("Normal Account: " + newaccount + "\n")
+              AccountManager.write("--------------------------\n")
+              newaccount1 = True
+              accountstat = "Admin"
+              print("Created your account!")
+              print("Username for new account:" + newaccount)
+              print("To switch accounts, go back to Accounts and say n where it says to create a new account!")
+              print("Forget your password? Check out Pass Helper!")
+            else:
+                print("Access Denied! Log into the admin account!")
+          else:
+            print("Fetching login details...")
+            if newaccount1 == True:
+              print("Restoring data...")
+              if accountstat == "Admin":
+                print("Logging in as " + newaccount)
+                checkpass =input("Password: ")
+                if checkpass == newpassword:
+                  print("Logged in!")
+                  accountstat = "Normal"
+              else:
+                print("Logging in as " + ssuser)
+                checkapass =input("Password: ")
+                if checkapass == sspass:
+                  print("Logged in!")
+                  accountstat = "Admin"
+
+            else:
+              print("No account file found!")
+              print("Please go create another account and come back here to login!")
+
+        if appchoice == "Pass Helper":
+          PCProcessLOGS = open("PCProcessLOGS","a")
+          PCProcessLOGS.write("Setting up "+ appchoice + "\n")
+          PCProcessLOGS.write(str(currentDT) + "\n")
+          PCProcessLOGS.write("------------------\n")
+          PCProcessLOGS.close
+          print("Accessing Account Processes")
+          passhelper = input("What account do you need to access?")
+          if passhelper == newaccount:
+            print("Accessing Account...")
+            adminpassword = input("Admin Password: ")
+            if adminpassword == sspass:
+              print("Granted!")
+              AccountProcess =open("AccountProcess","a")
+              AccountProcess.write("Used admin password to enter Pass Helper \n")
+              AccountProcess.write("----------------------------\n")
+              AccountProcess.close()
+            else:
+              print("Wrong password!")
+              AccountProcess =open("AccountProcess","a")
+              AccountProcess.write("Entered wrong password (Admin) \n")
+              AccountProcess.write("----------------------------\n")
+              AccountProcess.close()
+          else:
+            print("Accessing")
+            time.sleep(2)
+            adminrec = input("Admin Username:")
+            if adminrec == ssuser:
+              print("Your password: " + sspass)
+              AccountProcess =open("AccountProcess","a")
+              AccountProcess.write("Requested Admin Password \n")
+              AccountProcess.write("----------------------------\n")
+              AccountProcess.close()
+
+        
