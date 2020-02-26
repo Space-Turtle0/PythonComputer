@@ -1,4 +1,49 @@
 import time, webbrowser, os, warnings, random, math, datetime
+from time import sleep
+from os import system
+from tqdm import tqdm
+import sys
+def LoadingBar():
+  print(" Processing... \n")
+  rangeArg1 = 0
+  rangeArg2 = 999999
+  randNum = 23
+  for i in tqdm(range(rangeArg1, rangeArg2)):
+    randNum += 1
+  sleep(2)
+  system('clear')
+
+print("  Starting Drivers... \n")
+rangeArg1 = 0
+rangeArg2 = 999999
+randNum = 23
+for i in tqdm(range(rangeArg1, rangeArg2)):
+  randNum += 1
+sleep(2)
+
+print("  Checking Data... \n")
+rangeArg1 = 0
+rangeArg2 = 999999
+randNum = 23
+for i in tqdm(range(rangeArg1, rangeArg2)):
+  randNum += 1
+sleep(2)
+
+print(" Booting OSPUBLICTURTLE 3.2.1... \n")
+rangeArg1 = 0
+rangeArg2 = 999999
+randNum = 23
+for i in tqdm(range(rangeArg1, rangeArg2)):
+  randNum += 1
+sleep(2)
+system('clear')
+DEVMODE = False
+DevQues =input("Turn on DEV MODE?")
+if DevQues == "y":
+  devpass = input("DEV BOOT PASSWORD: ")
+  if devpass == "MO[3432]j8":
+    print("Logged in as DEV MODE")
+    DEVMODE = True
 def colortext():
   class bcolors:
     HEADER = '\033[95m'
@@ -12,6 +57,7 @@ def colortext():
 currentDT = datetime.datetime.now()
 PCProcessLOGS = open("PCProcessLOGS","a")
 PCProcessLOGS.write("Setting up services... \n")
+LoadingBar()
 PCProcessLOGS.write(str(currentDT) + "\n")
 PCProcessLOGS.write("------------------\n")
 PCProcessLOGS.close
@@ -52,6 +98,8 @@ AccountManager.close
 websitechoicetf = 0
 filetf = False
 Register = False
+save = "Null"
+linkpl = "Null"
 print("Booting...")
 time.sleep(2)
 print("No Domain Found...")
@@ -103,6 +151,7 @@ if psword == (sspass):
         print("Options:")
         print("Settings, Browser, Calculator, Console, Config, Settings-2")
         appchoice = input("What would you like to use today?")
+        system('clear')
         if appchoice == ("Settings"):
             PCProcessLOGS = open("PCProcessLOGS","a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
@@ -208,6 +257,7 @@ if psword == (sspass):
                 print("Invalid input")
 
         if appchoice == ("RMGame"):
+            LoadingBar()
             PCProcessLOGS = open("PCProcessLOGS","a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
@@ -629,5 +679,17 @@ if psword == (sspass):
               AccountProcess.write("Requested Admin Password \n")
               AccountProcess.write("----------------------------\n")
               AccountProcess.close()
+        if appchoice == "WebConsole":
+          print("Attempting to connect to the server...")
+          LoadingBar()
+          des1 = "n"
+          while des1 == "n":
+            mycode =input("Code to execute: ")
+            if mycode == "exit":
+              print("Exiting Console...")
+              des1 = "yes"
+              system('clear')
+            else:
+              exec(mycode)
 
         
