@@ -3,6 +3,11 @@ from time import sleep
 from os import system
 from tqdm import tqdm
 import sys
+DEVNOTE = "Did not post WebConsole due to logging bug. Once fixed we can push the update..."
+#
+
+
+#Loading Bar Function
 def LoadingBar():
   print(" Processing... \n")
   rangeArg1 = 0
@@ -13,6 +18,7 @@ def LoadingBar():
   sleep(2)
   system('clear')
 
+
 print("  Starting Drivers... \n")
 rangeArg1 = 0
 rangeArg2 = 999999
@@ -20,7 +26,6 @@ randNum = 23
 for i in tqdm(range(rangeArg1, rangeArg2)):
   randNum += 1
 sleep(2)
-
 print("  Checking Data... \n")
 rangeArg1 = 0
 rangeArg2 = 999999
@@ -44,6 +49,7 @@ if DevQues == "y":
   if devpass == "MO[3432]j8":
     print("Logged in as DEV MODE")
     DEVMODE = True
+    
 def colortext():
   class bcolors:
     HEADER = '\033[95m'
@@ -54,6 +60,8 @@ def colortext():
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+    BLINK = '\33[6m'
+    
 currentDT = datetime.datetime.now()
 PCProcessLOGS = open("PCProcessLOGS","a")
 PCProcessLOGS.write("Setting up services... \n")
@@ -103,7 +111,17 @@ linkpl = "Null"
 print("Booting...")
 time.sleep(2)
 print("No Domain Found...")
-
+class bcolors:
+  HEADER = '\033[95m'
+  OKBLUE = '\033[94m'
+  OKGREEN = '\033[92m'
+  WARNING = '\033[93m'
+  FAIL = '\033[91m'
+  ENDC = '\033[0m'
+  BOLD = '\033[1m'
+  UNDERLINE = '\033[4m'
+  BLINK = '\033[6m'
+  print(f"{BLINK}Attempting to log in...{ENDC}")
 #Loading..................
 
 class bcolors:
@@ -682,14 +700,46 @@ if psword == (sspass):
         if appchoice == "WebConsole":
           print("Attempting to connect to the server...")
           LoadingBar()
+          pythonstore =open("CodeEval.txt","a")
           des1 = "n"
           while des1 == "n":
             mycode =input("Code to execute: ")
+            pythonstore.write(mycode + "\n")
             if mycode == "exit":
+              pythonstore.close
               print("Exiting Console...")
               des1 = "yes"
               system('clear')
             else:
               exec(mycode)
 
-        
+        if appchoice == "Spam":
+          for i in range(1000):
+            print(" Processing... \n")
+            rangeArg1 = 0
+            rangeArg2 = 999
+            randNum = 23
+            for i in tqdm(range(rangeArg1, rangeArg2)):
+              randNum += 1
+            print("Did you enjoy? lol")
+
+        if appchoice == "what":
+          print("why u here?")
+        if appchoice == "chatter":
+          CH =open("ChatterData","a")
+          CHname =input("Hello there! What should I call you?: ")
+          print("Nice to meet you " + CHname)
+          CH.write("Well it was nice meeting you! Here is what I asked you! \n")
+          CH.write("Your name!: " + CHname + "\n")
+          time.sleep(2)
+          CHaction =input("Well what would you like to do? " + CHname)
+          CH.write("What you wanted to do!:" + CHaction + "\n")
+          time.sleep(2)
+          CHfavplay =input("nice nice, well what do you like to play?")
+          CH.write("You like to play " + CHfavplay + "\n")
+          CHcolor =input("What is your favorite color?")
+          CH.write("Your favorite color is" + CHcolor + "\n")
+      
+
+
+          
