@@ -1,7 +1,7 @@
 # PythonComputer
 [![Run on Repl.it](https://repl.it/badge/github/Space-Turtle0/PythonComputer)](https://repl.it/github/Space-Turtle0/PythonComputer)
 
-[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https/discord.gg/H5HvBEq) 
+[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https/discord.gg) 
 # PythonComputer is a simple python program (no display) that simulates a computer. 
 >This Program isn't finished and will be updated time to time!
 This repo has multiple .py modules you can use in your daily programs!
