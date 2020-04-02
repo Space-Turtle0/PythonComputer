@@ -3,6 +3,33 @@ from time import sleep
 from os import system
 from tqdm import tqdm
 import sys
+
+'''
+Well it looks like your trying to edit me!
+That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
+------------------------------------------------------------------
+If you want to change some of the configuration, scroll down to find that variable and change the values. 
+
+NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
+- You might cause some unwanted changes if you don't know what you are doing.
+
+'''
+
+#OSBOOT Version 
+OSInfo = "4.0.1"
+
+#Update Notes:
+print("Thank you for using PythonComputer or OSBOOTTURTLE!")
+print("PatchNotes/Updates:")
+print(
+  "- Made this >.> \n"
+  "- New process manager appchoice. You can view all of the tasks ongoing. \n"
+  "- Fixed some nasty bugs. \n"
+)
+print("Welcome to OSBOOTTURTLE" + OSInfo + "!")
+
+
+#Loading Bar Function
 def LoadingBar():
   print(" Processing... \n")
   rangeArg1 = 0
@@ -13,6 +40,7 @@ def LoadingBar():
   sleep(2)
   system('clear')
 
+
 print("  Starting Drivers... \n")
 rangeArg1 = 0
 rangeArg2 = 999999
@@ -20,7 +48,6 @@ randNum = 23
 for i in tqdm(range(rangeArg1, rangeArg2)):
   randNum += 1
 sleep(2)
-
 print("  Checking Data... \n")
 rangeArg1 = 0
 rangeArg2 = 999999
@@ -29,7 +56,7 @@ for i in tqdm(range(rangeArg1, rangeArg2)):
   randNum += 1
 sleep(2)
 
-print(" Booting OSPUBLICTURTLE 3.2.1... \n")
+print(" Booting OSPUBLICTURTLE" + OSInfo + "... \n")
 rangeArg1 = 0
 rangeArg2 = 999999
 randNum = 23
@@ -44,6 +71,7 @@ if DevQues == "y":
   if devpass == "MO[3432]j8":
     print("Logged in as DEV MODE")
     DEVMODE = True
+    
 def colortext():
   class bcolors:
     HEADER = '\033[95m'
@@ -54,6 +82,8 @@ def colortext():
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+    BLINK = '\33[6m'
+    
 currentDT = datetime.datetime.now()
 PCProcessLOGS = open("PCProcessLOGS","a")
 PCProcessLOGS.write("Setting up services... \n")
@@ -67,7 +97,7 @@ print("Reseting Services...")
 time.sleep(2)
 print("Creating processes")
 print("No account file found... [Error Code 5] ")
-PCLOGS =open("SetupLogs.txt")
+PCLOGS =open("SetupLogs.txt","a")
 time.sleep(2)
 print("New Account Required!")
 time.sleep(3)
@@ -85,7 +115,7 @@ PCLOGS.write("Used " + sspass + " as the Password to log in \n")
 PCLOGS.write("Setup is working /-")
 PCLOGS.write("Setting up files... \n")
 PCLOGS.write("No Domain Found, proceeding as root user \n")
-PCLOGS.write("Proceeding as OSTURTLESTRSPPER 3.6.8 \n")
+PCLOGS.write("Proceeding as OSTURTLESTRSPPER " + OSInfo + "\n")
 PCLOGS.write("Root User logging in...\n")
 PCLOGS.write("Closing Terminal! \n")
 PCLOGS.write("----------------\n")
@@ -103,7 +133,17 @@ linkpl = "Null"
 print("Booting...")
 time.sleep(2)
 print("No Domain Found...")
-
+class bcolors:
+  HEADER = '\033[95m'
+  OKBLUE = '\033[94m'
+  OKGREEN = '\033[92m'
+  WARNING = '\033[93m'
+  FAIL = '\033[91m'
+  ENDC = '\033[0m'
+  BOLD = '\033[1m'
+  UNDERLINE = '\033[4m'
+  BLINK = '\033[6m'
+  print(f"{BLINK}Attempting to log in...{ENDC}")
 #Loading..................
 
 class bcolors:
@@ -173,6 +213,7 @@ if psword == (sspass):
             print("Opening!")
             if "filetf" == True:
                 print("Accessing file...")
+                #Error for Save1
                 open(save1)
             else:
                 print("Error: You have no save!")
@@ -679,17 +720,96 @@ if psword == (sspass):
               AccountProcess.write("Requested Admin Password \n")
               AccountProcess.write("----------------------------\n")
               AccountProcess.close()
+              
         if appchoice == "WebConsole":
           print("Attempting to connect to the server...")
           LoadingBar()
+          pythonstore =open("CodeEval.txt","a")
+          print("If you would like to exit out of the program/loop please use "'exit'" in order to leave the VM" )
           des1 = "n"
           while des1 == "n":
             mycode =input("Code to execute: ")
+            pythonstore.write(mycode + "\n")
             if mycode == "exit":
+              pythonstore.close
               print("Exiting Console...")
               des1 = "yes"
               system('clear')
             else:
               exec(mycode)
 
-        
+        if appchoice == "Spam":
+          for i in range(1000):
+            print(" Processing... \n")
+            rangeArg1 = 0
+            rangeArg2 = 999
+            randNum = 23
+            for i in tqdm(range(rangeArg1, rangeArg2)):
+              randNum += 1
+            print("Did you enjoy? lol")
+
+        if appchoice == "what":
+          print("why u here?")
+        if appchoice == "chatter":
+          CH =open("ChatterData","a")
+          CHname =input("Hello there! What should I call you?: ")
+          print("Nice to meet you " + CHname)
+          CH.write("Well it was nice meeting you! Here is what I asked you! \n")
+          CH.write("Your name!: " + CHname + "\n")
+          time.sleep(2)
+          CHaction =input("Well what would you like to do? " + CHname)
+          CH.write("What you wanted to do!:" + CHaction + "\n")
+          time.sleep(2)
+          CHfavplay =input("nice nice, well what do you like to play?")
+          CH.write("You like to play " + CHfavplay + "\n")
+          CHcolor =input("What is your favorite color?")
+          CH.write("Your favorite color is" + CHcolor + "\n")
+        if appchoice == "Reload":
+          print("Are you sure you want to restart the machine?")
+          restartconf =input("(y/n)")
+          if restartconf == "y":
+            print("Preparing to reload OS BOOT.")
+            system("clear")
+            print(".")
+            time.sleep(2)
+            system('clear')
+            print("..")
+            time.sleep(2)
+            system('clear')
+            print('...')
+            time.sleep(2)
+            system('clear')
+            print("Removing Storage Containers....")
+            time.sleep(2)
+        if appchoice == "Process Manager...":
+          print("...")
+          time.sleep(3)
+          print("Loading...")
+          time.sleep(2)
+          print("Running Process: \n")
+          print(" Application Name | Disk Usage | Secret | Folder | Total lines used")
+          print("1) Main.py        | 51%        | N/A    | N/A    | 1343  ")
+          print("2) AcctProcess    | 4%         | 63H98  |DataLogs| 737   ")
+          print("3) CodeEval       | 5%         | 78hFj  |DataLogs| 343   ")
+          print("4) Logs           | 5%         | 763H8  |DataLogs| 7862  ")
+          print("5) MPU            | 1%         | *****  |DataLogs| ***   ")
+          print("6) PCProcessLOGS  | 20%        |OpenFile|DataLogs| 2323  ")
+          print("7) SetupLogs      | 5%         | *****  |DataLogs| 32786 ")
+          time.sleep(2)
+          #Update note
+          print("Details:")
+          class bcolors:
+            HEADER = '\033[95m'
+            OKBLUE = '\033[94m'
+            OKGREEN = '\033[92m'
+            WARNING = '\033[93m'
+            FAIL = '\033[91m'
+            ENDC = '\033[0m'
+            BOLD = '\033[1m'
+            UNDERLINE = '\033[4m'
+            BLINK = '\033[6m'
+            print(f"{OKGREEN}Any process's that have stars in their secret means you do not have enough permisson to see a core process key{ENDC}")
+            
+            
+  
+           

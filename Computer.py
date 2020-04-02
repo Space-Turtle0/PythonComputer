@@ -11,7 +11,3 @@ if Pass == "password":
         time.sleep(3)
         print("Unable to Connect to the server")
         print("Please check your connection and try again")
-
-
-else:
-    print("Invalid Credentials")
