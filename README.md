@@ -25,10 +25,8 @@ PyCharm: https://www.jetbrains.com/pycharm/download/
 If you just want to run it without editing...
 Open it with command prompt.
 
-# I keep getting a error about `b.color`
-Its your IDE or whatever your using. I suggest you use PyCharm or something else that supports classes. If you think that this is an issue, please submit an issue (#5) . 
-**In All**
-I don't suggest you use online IDE's, they have some restrictions which this program uses. (PCv2) Use something like PyCharm or VSC (*Found above*). If you really want to execute this on your version. Remove b.colors, class, f, and anything associated with the class color. Please sumbit an issue if the problem persists on desktop (IDE) applications!
+# My command line keep crashes!
+Well that shouldn't be happening. Instead of using command prompt, download one of the code editors above and run it in there. If there are any syntax issues that pop up, please open an issue so we can fix it!
 
 # Help! What do I download?
 
