@@ -33,7 +33,7 @@ Well it really depends on you.
 
 *Download this! Most revent version and being worked on!*
 
-- https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py
+- https://github.com/Space-Turtle0/PythonComputer/releases
 
 
 # Warning:
