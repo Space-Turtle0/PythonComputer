@@ -3,6 +3,7 @@ from time import sleep
 from os import system
 from tqdm import tqdm
 import sys
+import string
 
 '''
 Well it looks like your trying to edit me!
@@ -16,18 +17,56 @@ NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 '''
 
 #OSBOOT Version 
-OSInfo = "4.0.1"
+OSInfo = "4.1.2"
+BetaValue = True
+#The Value above tells if the following 
+
+#Use this to skip login start!
+DEVMODE = False
+
+#Starter Values:
+filetf = False
+Register = False
+KeyAWOL = False
+letters = string.ascii_letters
+DeCode = ( ''.join(random.choice(letters) for i in range(10)) )
+save = "Null"
+linkpl = "Null"
+
 
 #Update Notes:
 print("Thank you for using PythonComputer or OSBOOTTURTLE!")
 print("PatchNotes/Updates:")
 print(
-  "- Made this >.> \n"
-  "- New process manager appchoice. You can view all of the tasks ongoing. \n"
+  "- Added secret keys and Decoder \n"
+  "- Removed save as it doesn't work now... \n"
   "- Fixed some nasty bugs. \n"
 )
-print("Welcome to OSBOOTTURTLE" + OSInfo + "!")
+print("Welcome to OSBOOTTURTLE " + OSInfo + "!")
 
+'''Function:'''
+#If you want to define a function, its best to do it here if its a startup requirement!
+
+
+# Using for Beta Drive Gen
+'''
+
+file = open('location',"r")
+print("ID" , '\t' ,"Name",'\t' ,"SM", '\t' ,"MM",'\t' ,"SoM",'\t',"TOTAL")
+print("------------------------------------------")
+for line in file:
+    x = line.strip().split(',')
+    if len(x) == 5:
+        print(x[0], '\t', x[1], '\t', x[2], '\t', x[3], '\t', x[4], '\t', int(x[2]) + int(x[3]) + int(x[4]))
+        #fileout = open('location',"a")
+        #fileout.write(ft)
+
+
+
+
+
+# (x[1],'\t',x[2],'\t',x[3],'\t' ,x[4], '\t', int(x[2],10)+ int(x[3],10)+ int(x[4],10))
+'''
 
 #Loading Bar Function
 def LoadingBar():
@@ -40,6 +79,105 @@ def LoadingBar():
   sleep(2)
   system('clear')
 
+
+#Login Function
+def loginstart():
+  def colortext():
+    class bcolors:
+      HEADER = '\033[95m'
+      OKBLUE = '\033[94m'
+      OKGREEN = '\033[92m'
+      WARNING = '\033[93m'
+      FAIL = '\033[91m'
+      ENDC = '\033[0m'
+      BOLD = '\033[1m'
+      UNDERLINE = '\033[4m'
+      BLINK = '\33[6m'
+currentDT = datetime.datetime.now()
+PCProcessLOGS = open("PCProcessLOGS","a")
+PCProcessLOGS.write("Setting up services... \n")
+LoadingBar()
+PCProcessLOGS.write(str(currentDT) + "\n")
+PCProcessLOGS.write("------------------\n")
+PCProcessLOGS.close
+currentDT = datetime.datetime.now()
+if DEVMODE == False:
+  print(str(currentDT))
+  print("Reseting Services...")
+  time.sleep(2)
+  print("Creating processes")
+  print("No account file found... [Error Code 5] ")
+  PCLOGS =open("SetupLogs.txt","a")
+  time.sleep(2)
+  print("New Account Required!")
+  time.sleep(3)
+  ssuser = input("New Username: ")
+  sspass = input("New Password: ")
+  print("Setting you up as the admin account...")
+  print("Setup Success!")
+  accountstat = 'Admin'
+  PCLOGS = open("SetupLogs.txt", "a")
+  currentDT = datetime.datetime.now()
+  PCLOGS.write(str(currentDT) + "\n")
+  # "\n"
+  PCLOGS.write("Used " + ssuser + " as the Username to log in \n")
+  PCLOGS.write("Used " + sspass + " as the Password to log in \n")
+  PCLOGS.write("Setup is working /-")
+  PCLOGS.write("Setting up files... \n")
+  PCLOGS.write("No Domain Found, proceeding as root user \n")
+  PCLOGS.write("Proceeding as OSTURTLESTRSPPER " + OSInfo + "\n")
+  PCLOGS.write("Root User logging in...\n")
+  PCLOGS.write("Closing Terminal! \n")
+  PCLOGS.write("----------------\n")
+  PCLOGS.close()
+  AccountManager =open("AccountProcess.txt","a")
+  AccountManager.write("Accounts Currently Stored: \n")
+  AccountManager.write("ROOT USER: " + ssuser + "\n")
+  AccountManager.write("--------------------------\n")
+  AccountManager.close
+  websitechoicetf = 0
+  print("Booting...")
+  time.sleep(2)
+  print("No Domain Found...")
+  class bcolors:
+      HEADER = '\033[95m'
+      OKBLUE = '\033[94m'
+      OKGREEN = '\033[92m'
+      WARNING = '\033[93m'
+      FAIL = '\033[91m'
+      ENDC = '\033[0m'
+      BOLD = '\033[1m'
+      UNDERLINE = '\033[4m'
+      print(f"{OKGREEN}Attempting to log in...{ENDC}")
+  usernamestart = input("Username: ")
+  if usernamestart == ssuser:
+      print("Acessing domain!")
+  else:
+      exit("Invalid Domain/Username")
+  psword = input("Please enter your password ")
+  if psword == (sspass):
+    class bcolors:
+        HEADER = '\033[95m'
+        OKBLUE = '\033[94m'
+        OKGREEN = '\033[92m'
+        WARNING = '\033[93m'
+        FAIL = '\033[91m'
+        ENDC = '\033[0m'
+        BOLD = '\033[1m'
+        UNDERLINE = '\033[4m'
+        print(f"{WARNING}Logging in...{ENDC}")
+
+    time.sleep(2)
+    PCLOGS = open("SetupLogs.txt", "a")
+    PCLOGS.write("Logged in as ROOT USER \n")
+    PCLOGS.write("---------------------\n")
+    PCLOGS.close()
+
+
+#Function Workspace End
+
+
+#Starting Screen
 
 print("  Starting Drivers... \n")
 rangeArg1 = 0
@@ -64,14 +202,13 @@ for i in tqdm(range(rangeArg1, rangeArg2)):
   randNum += 1
 sleep(2)
 system('clear')
-DEVMODE = False
-DevQues =input("Turn on DEV MODE?")
-if DevQues == "y":
-  devpass = input("DEV BOOT PASSWORD: ")
-  if devpass == "MO[3432]j8":
-    print("Logged in as DEV MODE")
-    DEVMODE = True
-    
+
+if DEVMODE == False:
+  loginstart()
+
+
+#Not being used
+'''
 def colortext():
   class bcolors:
     HEADER = '\033[95m'
@@ -83,109 +220,15 @@ def colortext():
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     BLINK = '\33[6m'
-    
-currentDT = datetime.datetime.now()
-PCProcessLOGS = open("PCProcessLOGS","a")
-PCProcessLOGS.write("Setting up services... \n")
-LoadingBar()
-PCProcessLOGS.write(str(currentDT) + "\n")
-PCProcessLOGS.write("------------------\n")
-PCProcessLOGS.close
-currentDT = datetime.datetime.now()
-print(str(currentDT))
-print("Reseting Services...")
-time.sleep(2)
-print("Creating processes")
-print("No account file found... [Error Code 5] ")
-PCLOGS =open("SetupLogs.txt","a")
-time.sleep(2)
-print("New Account Required!")
-time.sleep(3)
-ssuser = input("New Username: ")
-sspass = input("New Password: ")
-print("Setting you up as the admin account...")
-print("Setup Success!")
-accountstat = 'Admin'
-PCLOGS = open("SetupLogs.txt", "a")
-currentDT = datetime.datetime.now()
-PCLOGS.write(str(currentDT) + "\n")
-# "\n"
-PCLOGS.write("Used " + ssuser + " as the Username to log in \n")
-PCLOGS.write("Used " + sspass + " as the Password to log in \n")
-PCLOGS.write("Setup is working /-")
-PCLOGS.write("Setting up files... \n")
-PCLOGS.write("No Domain Found, proceeding as root user \n")
-PCLOGS.write("Proceeding as OSTURTLESTRSPPER " + OSInfo + "\n")
-PCLOGS.write("Root User logging in...\n")
-PCLOGS.write("Closing Terminal! \n")
-PCLOGS.write("----------------\n")
-PCLOGS.close()
-AccountManager =open("AccountProcess.txt","a")
-AccountManager.write("Accounts Currently Stored: \n")
-AccountManager.write("ROOT USER: " + ssuser + "\n")
-AccountManager.write("--------------------------\n")
-AccountManager.close
-websitechoicetf = 0
-filetf = False
-Register = False
-save = "Null"
-linkpl = "Null"
-print("Booting...")
-time.sleep(2)
-print("No Domain Found...")
-class bcolors:
-  HEADER = '\033[95m'
-  OKBLUE = '\033[94m'
-  OKGREEN = '\033[92m'
-  WARNING = '\033[93m'
-  FAIL = '\033[91m'
-  ENDC = '\033[0m'
-  BOLD = '\033[1m'
-  UNDERLINE = '\033[4m'
-  BLINK = '\033[6m'
-  print(f"{BLINK}Attempting to log in...{ENDC}")
-#Loading..................
+'''
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    print(f"{OKGREEN}Attempting to log in...{ENDC}")
-usernamestart = input("Username: ")
-if usernamestart == ssuser:
-    print("Acessing domain!")
-else:
-    exit("Invalid Domain/Username")
-psword = input("Please enter your password ")
-if psword == (sspass):
-
-    class bcolors:
-        HEADER = '\033[95m'
-        OKBLUE = '\033[94m'
-        OKGREEN = '\033[92m'
-        WARNING = '\033[93m'
-        FAIL = '\033[91m'
-        ENDC = '\033[0m'
-        BOLD = '\033[1m'
-        UNDERLINE = '\033[4m'
-        print(f"{WARNING}Logging in...{ENDC}")
-
-    time.sleep(2)
-    PCLOGS = open("SetupLogs.txt", "a")
-    PCLOGS.write("Logged in as ROOT USER \n")
-    PCLOGS.write("---------------------\n")
-    PCLOGS.close()
+Startboot =input("Press Enter to get started...")
+if Startboot == "":
     print(
         "Welcome to the Home Screen. This computer is not built for real life useage.."
     )
     print("This computer is soley for the use of testing.")
     time.sleep(2)
-
     des = "y"
     while des == "y":
         print("Options:")
@@ -204,20 +247,6 @@ if psword == (sspass):
             Logs = open(r"Logs.txt", "r")
             print(Logs.readlines())
             Logs.close()
-        if appchoice == "Open":
-            PCProcessLOGS = open("PCProcessLOGS","a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            print("Opening!")
-            if "filetf" == True:
-                print("Accessing file...")
-                #Error for Save1
-                open(save1)
-            else:
-                print("Error: You have no save!")
-                print("Please go to Config to save a file!")
 
         if appchoice == ("Browser"):
             PCProcessLOGS = open("PCProcessLOGS","a")
@@ -781,20 +810,40 @@ if psword == (sspass):
             system('clear')
             print("Removing Storage Containers....")
             time.sleep(2)
-        if appchoice == "Process Manager...":
+        if appchoice == "TaskManager":
           print("...")
           time.sleep(3)
           print("Loading...")
           time.sleep(2)
           print("Running Process: \n")
-          print(" Application Name | Disk Usage | Secret | Folder | Total lines used")
-          print("1) Main.py        | 51%        | N/A    | N/A    | 1343  ")
-          print("2) AcctProcess    | 4%         | 63H98  |DataLogs| 737   ")
-          print("3) CodeEval       | 5%         | 78hFj  |DataLogs| 343   ")
-          print("4) Logs           | 5%         | 763H8  |DataLogs| 7862  ")
-          print("5) MPU            | 1%         | *****  |DataLogs| ***   ")
-          print("6) PCProcessLOGS  | 20%        |OpenFile|DataLogs| 2323  ")
-          print("7) SetupLogs      | 5%         | *****  |DataLogs| 32786 ")
+          #mark for auto generate keys
+          #1 # printing letters
+          letters = string.ascii_letters
+          AcctProccessKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+          #2
+          # printing letters
+          letters = string.ascii_letters
+          MainpyKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+          #3
+          # printing letters
+          letters = string.ascii_letters
+          CodeEvalKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+          #4
+          # printing letters
+          letters = string.ascii_letters
+          LogsKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+          #5
+          # printing letters
+          letters = string.ascii_letters
+          PCProcessLOGSKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+          print(" Application Name | Disk Usage | Secret                 | Folder | Total lines used")
+          print("1) Main.py        | 51%        |" + MainpyKEY + "       | N/A    | 1343  ")
+          print("2) AcctProcess    | 4%         |" + AcctProccessKEY + " |DataLogs| 737   ")
+          print("3) CodeEval       | 5%         |" + CodeEvalKEY + "     |DataLogs| 343   ")
+          print("4) Logs           | 5%         |" + LogsKEY + "         |DataLogs| 7862  ")
+          print("5) MPU            | 1%         | *****                  |DataLogs| ***   ")
+          print("6) PCProcessLOGS  | 20%        |" + PCProcessLOGSKEY + "|DataLogs| 2323  ")
+          print("7) SetupLogs      | 5%         | *****                  |DataLogs| 32786 ")
           time.sleep(2)
           #Update note
           print("Details:")
@@ -808,8 +857,49 @@ if psword == (sspass):
             BOLD = '\033[1m'
             UNDERLINE = '\033[4m'
             BLINK = '\033[6m'
-            print(f"{OKGREEN}Any process's that have stars in their secret means you do not have enough permisson to see a core process key{ENDC}")
+            print(f"{OKGREEN}Any process's that have stars in their secret means you do not have enough permission to see a core process key{ENDC}")
+            time.sleep(2)
+            decodeAsk =input("Would you like to grant permission to see this file?")
+            if decodeAsk == "y":
+              KeyAWOL = True
+              time.sleep(2)
+              print("Generating keys...")
+              time.sleep(2)
+              print("Your key: \n")
+              KeyAWOL = True
+              #print(KeyAWOL)
+              print(DeCode)
+              print("------------------------------")
+              print("Use this key in the `Decoder` module to get information regarding the terminal! ")
+
             
+        if appchoice == "Decoder":
+          print("Please wait...")
+          time.sleep(2)
+          print("Fetching key information...")
+          YourKey =input("Paste your key here: ")
+          if YourKey == DeCode:
+            print("Checking key...")
+            letters = string.ascii_letters
+            MPUKEY = PCProcessLOGSKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+            #2
+            letters = string.ascii_letters
+            SetupLogsKEY = PCProcessLOGSKEY = ( ''.join(random.choice(letters) for i in range(10)) )
+            time.sleep(2)
+            print("Message from key: ")
+            system('clear')
+            print("MPU Secret: " + MPUKEY)
+            print("SetupLogs Secret: " + SetupLogsKEY)
+
+          
+
             
   
-           
+                
+
+
+            
+
+          
+      
+
