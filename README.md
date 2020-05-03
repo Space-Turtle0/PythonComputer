@@ -82,7 +82,7 @@ There are a few things you can change that will a) modify the log version and b)
 - `BetaValue` - Used to mark in GitHub if the version is currently in Beta, doesn't really do anything though.
 - `DEVMODE` - Need to test something but the logging in portion taking too much of your time? Well now you can skip it just by marking it as `True`!
 - Everything else in the `Starter Values` are marked as False/null just so the program is marked back to default!
-- Need to create a function?
+- Need to create a function? Well now you can pre-define it in the function workspace! There is no need to cram it in a random spot now!
 
 
 
