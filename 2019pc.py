@@ -12,13 +12,13 @@ That's great! If you want to change the OS BOOT number, change the variable belo
 If you want to change some of the configuration, scroll down to find that variable and change the values. 
 
 NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
-- You might cause some unwanted changes if you don't know what you are doing.
+- You might cause some unwanted changes if you don't know what you are doing. 
 
 '''
 
 #OSBOOT Version 
-OSInfo = "4.1.2"
-BetaValue = True
+OSInfo = "4.1.3"
+BetaValue = False
 #The Value above tells if the following 
 
 #Use this to skip login start!
@@ -44,9 +44,36 @@ print(
 )
 print("Welcome to OSBOOTTURTLE " + OSInfo + "!")
 
-'''Function:'''
-#If you want to define a function, its best to do it here if its a startup requirement!
+#Starting Screen
 
+print("  Starting Drivers... \n")
+rangeArg1 = 0
+rangeArg2 = 999999
+randNum = 23
+for i in tqdm(range(rangeArg1, rangeArg2)):
+  randNum += 1
+sleep(2)
+print("  Checking Data... \n")
+rangeArg1 = 0
+rangeArg2 = 999999
+randNum = 23
+for i in tqdm(range(rangeArg1, rangeArg2)):
+  randNum += 1
+sleep(2)
+
+print(" Booting OSPUBLICTURTLE" + OSInfo + "... \n")
+rangeArg1 = 0
+rangeArg2 = 999999
+randNum = 23
+for i in tqdm(range(rangeArg1, rangeArg2)):
+  randNum += 1
+sleep(2)
+system('clear')
+
+
+'''Function:
+#If you want to define a function, its best to do it here if its a startup requirement!
+'''
 
 # Using for Beta Drive Gen
 '''
@@ -60,10 +87,6 @@ for line in file:
         print(x[0], '\t', x[1], '\t', x[2], '\t', x[3], '\t', x[4], '\t', int(x[2]) + int(x[3]) + int(x[4]))
         #fileout = open('location',"a")
         #fileout.write(ft)
-
-
-
-
 
 # (x[1],'\t',x[2],'\t',x[3],'\t' ,x[4], '\t', int(x[2],10)+ int(x[3],10)+ int(x[4],10))
 '''
@@ -177,31 +200,6 @@ if DEVMODE == False:
 #Function Workspace End
 
 
-#Starting Screen
-
-print("  Starting Drivers... \n")
-rangeArg1 = 0
-rangeArg2 = 999999
-randNum = 23
-for i in tqdm(range(rangeArg1, rangeArg2)):
-  randNum += 1
-sleep(2)
-print("  Checking Data... \n")
-rangeArg1 = 0
-rangeArg2 = 999999
-randNum = 23
-for i in tqdm(range(rangeArg1, rangeArg2)):
-  randNum += 1
-sleep(2)
-
-print(" Booting OSPUBLICTURTLE" + OSInfo + "... \n")
-rangeArg1 = 0
-rangeArg2 = 999999
-randNum = 23
-for i in tqdm(range(rangeArg1, rangeArg2)):
-  randNum += 1
-sleep(2)
-system('clear')
 
 if DEVMODE == False:
   loginstart()
