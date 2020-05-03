@@ -121,5 +121,5 @@ Place your `define` statements after asking about `appchoice`!
 - On Discord
 
 Program Built by Space Turtle / Space
-Thanks!
+
 Have fun! 😁
