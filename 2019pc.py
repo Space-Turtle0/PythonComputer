@@ -18,7 +18,11 @@ NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 
 #OSBOOT Version 
 OSInfo = "4.1.3"
-BetaValue = False
+#Public Build
+BetaValue = True
+if BetaValue == True:
+  OSInfoB = "4.1.4"
+  #Beta build
 #The Value above tells if the following 
 
 #Use this to skip login start!
@@ -102,6 +106,14 @@ def LoadingBar():
   sleep(2)
   system('clear')
 
+#Universal Bar
+def UBar():
+   rangeArg1 = 0
+   rangeArg2 = 999999
+   randNum = 23
+   for i in tqdm(range(rangeArg1, rangeArg2)):
+    randNum += 1
+   sleep(2)
 
 #Login Function
 def loginstart():
@@ -888,16 +900,110 @@ if Startboot == "":
             system('clear')
             print("MPU Secret: " + MPUKEY)
             print("SetupLogs Secret: " + SetupLogsKEY)
+            print("Closing out of Decoder")
+        
+        if appchoice == "Security":
+          print("Loading...")
+          LoadingBar()
+          if DEVMODE == False:
+            print("Loading Turtle Anti-Malware...")
+            time.sleep(2)
+            print("There is an update, please wait while we update your system...")
+            time.sleep(2)
+            print("Extracting TurtleAnti-Malware_6.2.4 \n")
+            rangeArg1 = 0
+            rangeArg2 = 999999
+            randNum = 23
+            for i in tqdm(range(rangeArg1, rangeArg2)):
+              randNum += 1
+            sleep(2)
+            print("Updating... \n")
+            UBar()
+            time.sleep(5)
+            print("Core Shields:")
+            print("1) File Shield     - ON")
+            print("2) Behavior Shield - ON")
+            print("3) Web Shield      - ON")
+            print("4) Mail Shield     - ON")
+            print("--------------------")
+            print("Scans:   ")
+            print("1a) Quick Scan:          ")
+            print("2a) Full Disk Scan       ")
+            time.sleep(2)
+            print("What would you like to modify/run?")
+            sec =input("Use the numbers to select an option... ")
+            if sec == 1:
+              print("Sorry, you can't modify this yet!")
+            if sec == 2:
+              print("Sorry, you can't modify this yet!")
+            if sec == 3:
+              print("Sorry, you can't modify this yet!")
+            if sec == 4:
+              print("Sorry, you can't modify this yet!")
+            if sec == "1a":
+              print("Preparing to run a quick scan...")
+              time.sleep(2)
+              QSM = random.randit(0,1)
+              print("Scanning BOOTDISK \n")
+              UBar()
+              print("Checking AccountProcess.txt ...")
+              time.sleep(1)
+              print("Checking ChatterData...")
+              print("Checking CodeEval.txt")
+              print("Checking PCProcessLOGS.txt ")
+              time.sleep(1)
+              print("Checking SetupLogs.txt")
+              print("Checking Encode Drive...")
+              time.sleep(5)
+              if QSM == 1:
+                print("Threats found!")
+                time.sleep(1)
+                print("Collecting Data...")
+                time.sleep(1)
+                print("Trojan Found at: ")
+                print("C:/bootdisk/rootuser/datalogs/files/rtxa.exe")
+                cleanupQ =input("Would you like to fix this?")
+                if cleanupQ == "y":
+                  print("Fixing threat...")
+                  time.sleep(2)
+                  print("Threat moved to virus chest")
+                  time.sleep(3)
+                else:
+                  print("Leaving threat...")
+                  time.sleep(2)
+              else:
+                print("No threats found...")
 
-          
-
-            
-  
-                
-
-
-            
-
-          
-      
+            elif sec == "2a":
+              print("Preparing to run a full scan...")
+              print("Scanning BOOTDISK \n")
+              UBar()
+              print("Checking AccountProcess.txt ...")
+              time.sleep(1)
+              print("Checking ChatterData...")
+              print("Checking CodeEval.txt")
+              print("Checking PCProcessLOGS.txt ")
+              time.sleep(1)
+              print("Checking SetupLogs.txt")
+              print("Checking Encode Drive...")
+              FSM = random.randit(0,1)
+              if FSM == 1:
+                print("Threats found!")
+                time.sleep(1)
+                print("Collecting Data...")
+                time.sleep(1)
+                print("Trojan Found at: ")
+                print("C:/bootdisk/rootuser/datalogs/files/rtxa.exe")
+                cleanupF =input("Would you like to fix this?")
+                if cleanupF == "y":
+                  print("Fixing threat...")
+                  time.sleep(2)
+                  print("Threat moved to virus chest")
+                  time.sleep(3)
+                else:
+                  print("Leaving threat...")
+                  time.sleep(2)
+              else:
+                print("No threats found...")
+              
 
