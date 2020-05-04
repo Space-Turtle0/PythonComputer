@@ -10,7 +10,7 @@ Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
 ------------------------------------------------------------------
 If you want to change some of the configuration, scroll down to find that variable and change the values. 
-
+READ THE README BEFORE MAKING CHANGES!
 NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 - You might cause some unwanted changes if you don't know what you are doing. 
 
@@ -25,6 +25,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
+#Decmode should be marked as False on default. 
 DEVMODE = False
 
 #Starter Values:
