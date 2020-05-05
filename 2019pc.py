@@ -10,7 +10,7 @@ Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
 ------------------------------------------------------------------
 If you want to change some of the configuration, scroll down to find that variable and change the values. 
-READ THE README BEFORE MAKING CHANGES!
+
 NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 - You might cause some unwanted changes if you don't know what you are doing. 
 
@@ -25,8 +25,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-#Decmode should be marked as False on default. 
-DEVMODE = False
+DEVMODE = True
 
 #Starter Values:
 filetf = False
@@ -38,6 +37,11 @@ DeCode = ( ''.join(random.choice(letters) for i in range(10)) )
 save = "Null"
 linkpl = "Null"
 
+#Security Values
+FileShield = True
+BehaviorShield = True
+WebShield = True
+MailShield = True
 
 #Update Notes:
 print("Thank you for using PythonComputer or OSBOOTTURTLE!")
@@ -934,13 +938,75 @@ if Startboot == "":
             print("What would you like to modify/run?")
             sec =input("Use the numbers to select an option... ")
             if sec == "1":
-              print("Sorry, you can't modify this yet!")
+              print("Please wait...")
+              if FileShield == True:
+                FSQ = input("Are you sure you want to turn off this module? (File Shield)")
+                if FSQ == "y":
+                  print("Attempting to turn off module...")
+                  time.sleep(1)
+                  if DEVMODE == False:
+                    FSQP = input("Enter your password: ")
+                    if FSQP == sspass:
+                      print("Turned off module")
+                    else:
+                      print("Wrong password")
+                  else:
+                    print("Turned off Module.")
+                else:
+                  print("Okay, good thing you didn't :p")
+
+                
             if sec == "2":
-              print("Sorry, you can't modify this yet!")
+              print("Please wait...")
+              if BehaviorShield == True:
+                BSQ = input("Are you sure you want to turn off this module? (Behavior Shield)")
+                if BSQ == "y":
+                  print("Attempting to turn off module...")
+                  time.sleep(1)
+                  if DEVMODE == False:
+                    BSQP = input("Enter your password: ")
+                    if BSQP == sspass:
+                      print("Turned off module")
+                    else:
+                      print("Wrong password")
+                  else:
+                    print("Turned off Module.")
+                else:
+                  print("Okay, good thing you didn't :p")
             if sec == "3":
-              print("Sorry, you can't modify this yet!")
+              print("Please wait...")
+              if WebShield == True:
+                WSQ = input("Are you sure you want to turn off this module? (Web Shield)")
+                if WSQ == "y":
+                  print("Attempting to turn off module...")
+                  time.sleep(1)
+                  if DEVMODE == False:
+                    WSQP = input("Enter your password: ")
+                    if WSQP == sspass:
+                      print("Turned off module")
+                    else:
+                      print("Wrong password")
+                  else:
+                    print("Turned off Module.")
+                else:
+                  print("Okay, good thing you didn't :p")
             if sec == "4":
-              print("Sorry, you can't modify this yet!")
+              print("Please wait...")
+              if MailShield == True:
+                MSQ = input("Are you sure you want to turn off this module? (Mail Shield)")
+                if MSQ == "y":
+                  print("Attempting to turn off module...")
+                  time.sleep(1)
+                  if DEVMODE == False:
+                    MSQP = input("Enter your password: ")
+                    if MSQP == sspass:
+                      print("Turned off module")
+                    else:
+                      print("Wrong password")
+                  else:
+                    print("Turned off Module.")
+                else:
+                  print("Okay, good thing you didn't :p")
             if sec == "1a":
               print("Preparing to run a quick scan...")
               time.sleep(2)
