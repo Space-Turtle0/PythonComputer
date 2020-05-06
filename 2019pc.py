@@ -1,6 +1,6 @@
 import time, webbrowser, os, warnings, random, math, datetime
 from time import sleep
-from os import system
+from os import system, name
 from tqdm import tqdm
 import sys
 import string
@@ -43,6 +43,28 @@ BehaviorShield = True
 WebShield = True
 MailShield = True
 
+'''
+#KeyProgram
+def PasswordChecker():
+  print("Starting Program... \n")
+  rangeArg1 = 0
+  rangeArg2 = 999999
+  randNum = 23
+  for i in tqdm(range(rangeArg1, rangeArg2)):
+    randNum += 1
+  sleep(2)
+  clear()
+  Keycheck = "TurtlesAreTheBest!"
+  print("If you don't know your key, go check out the github page!")
+  print("https://github.com/Space-Turtle0/PythonComputer")
+  Keycheckerinput =input("Enter the key: ")
+  if Keycheckerinput == Keycheck:
+    UnlockedProgram = True
+
+
+if UnlockedProgram == False:
+  print("Please go back and start the KeyFile again!")
+'''
 #Update Notes:
 print("Thank you for using PythonComputer or OSBOOTTURTLE!")
 print("PatchNotes/Updates:")
@@ -52,6 +74,17 @@ print(
   "- Fixed some nasty bugs. \n"
 )
 print("Welcome to OSBOOTTURTLE " + OSInfo + "!")
+
+#Required Function prior to setup!
+def clear(): 
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+  
+    # for mac and linux(here, os.name is 'posix') 
+    else: 
+        _ = system('clear') 
+
 
 #Starting Screen
 
@@ -77,7 +110,7 @@ randNum = 23
 for i in tqdm(range(rangeArg1, rangeArg2)):
   randNum += 1
 sleep(2)
-system('clear')
+clear()
 
 
 '''Function:
@@ -100,6 +133,8 @@ for line in file:
 # (x[1],'\t',x[2],'\t',x[3],'\t' ,x[4], '\t', int(x[2],10)+ int(x[3],10)+ int(x[4],10))
 '''
 
+
+
 #Loading Bar Function
 def LoadingBar():
   print(" Processing... \n")
@@ -109,7 +144,7 @@ def LoadingBar():
   for i in tqdm(range(rangeArg1, rangeArg2)):
     randNum += 1
   sleep(2)
-  system('clear')
+  clear()
 
 #Universal Bar
 def UBar():
@@ -119,6 +154,9 @@ def UBar():
    for i in tqdm(range(rangeArg1, rangeArg2)):
     randNum += 1
    sleep(2)
+
+
+  
 
 #Login Function
 def loginstart():
@@ -249,7 +287,7 @@ if Startboot == "":
         print("Options:")
         print("Settings, Browser, Calculator, Console, Config, Settings-2")
         appchoice = input("What would you like to use today?")
-        system('clear')
+        clear()
         if appchoice == ("Settings"):
             PCProcessLOGS = open("PCProcessLOGS","a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
@@ -778,7 +816,7 @@ if Startboot == "":
               pythonstore.close
               print("Exiting Console...")
               des1 = "yes"
-              system('clear')
+              clear()
             else:
               exec(mycode)
 
@@ -816,13 +854,13 @@ if Startboot == "":
             system("clear")
             print(".")
             time.sleep(2)
-            system('clear')
+            clear()
             print("..")
             time.sleep(2)
-            system('clear')
+            clear()
             print('...')
             time.sleep(2)
-            system('clear')
+            clear()
             print("Removing Storage Containers....")
             time.sleep(2)
         if appchoice == "TaskManager":
@@ -902,7 +940,7 @@ if Startboot == "":
             SetupLogsKEY = PCProcessLOGSKEY = ( ''.join(random.choice(letters) for i in range(10)) )
             time.sleep(2)
             print("Message from key: ")
-            system('clear')
+            clear()
             print("MPU Secret: " + MPUKEY)
             print("SetupLogs Secret: " + SetupLogsKEY)
             print("Closing out of Decoder")
