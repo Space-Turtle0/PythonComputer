@@ -25,7 +25,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = True
+DEVMODE = False
 
 #Starter Values:
 filetf = False
