@@ -25,7 +25,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = False
+DEVMODE = True
 
 #Starter Values:
 filetf = False
@@ -38,10 +38,11 @@ save = "Null"
 linkpl = "Null"
 
 #Security Values
-FileShield = True
-BehaviorShield = True
-WebShield = True
-MailShield = True
+FileShield = "ON"
+BehaviorShield = "ON"
+WebShield = "ON"
+MailShield = "ON"
+SecurityUpdate = False
 
 '''
 #KeyProgram
@@ -951,23 +952,25 @@ if Startboot == "":
           if SecurityBlocked == False:
             print("Loading Turtle Anti-Malware...")
             time.sleep(2)
-            print("There is an update, please wait while we update your system...")
-            time.sleep(2)
-            print("Extracting TurtleAnti-Malware_6.2.4 \n")
-            rangeArg1 = 0
-            rangeArg2 = 999999
-            randNum = 23
-            for i in tqdm(range(rangeArg1, rangeArg2)):
-              randNum += 1
-            sleep(2)
-            print("Updating... \n")
-            UBar()
-            time.sleep(5)
+            if SecurityUpdate == False:
+              print("There is an update, please wait while we update your system...")
+              time.sleep(2)
+              print("Extracting TurtleAnti-Malware_6.2.4 \n")
+              rangeArg1 = 0
+              rangeArg2 = 999999
+              randNum = 23
+              for i in tqdm(range(rangeArg1, rangeArg2)):
+                randNum += 1
+              sleep(2)
+              print("Updating... \n")
+              UBar()
+              SecurityUpdate = 1
+              time.sleep(5)
             print("Core Shields:")
-            print("1) File Shield     - ON")
-            print("2) Behavior Shield - ON")
-            print("3) Web Shield      - ON")
-            print("4) Mail Shield     - ON")
+            print("1) File Shield     - " + FileShield)
+            print("2) Behavior Shield - " + BehaviorShield)
+            print("3) Web Shield      - " + WebShield)
+            print("4) Mail Shield     - " + MailShield)
             print("--------------------")
             print("Scans:   ")
             print("1a) Quick Scan:          ")
@@ -977,7 +980,7 @@ if Startboot == "":
             sec =input("Use the numbers to select an option... ")
             if sec == "1":
               print("Please wait...")
-              if FileShield == True:
+              if FileShield == "ON":
                 FSQ = input("Are you sure you want to turn off this module? (File Shield)")
                 if FSQ == "y":
                   print("Attempting to turn off module...")
@@ -990,13 +993,17 @@ if Startboot == "":
                       print("Wrong password")
                   else:
                     print("Turned off Module.")
+                    FileShield = "OFF"
                 else:
                   print("Okay, good thing you didn't :p")
+              else:
+                print("Turning on module...")
+                FileShield = "ON"
 
                 
             if sec == "2":
               print("Please wait...")
-              if BehaviorShield == True:
+              if BehaviorShield == "ON":
                 BSQ = input("Are you sure you want to turn off this module? (Behavior Shield)")
                 if BSQ == "y":
                   print("Attempting to turn off module...")
@@ -1009,11 +1016,17 @@ if Startboot == "":
                       print("Wrong password")
                   else:
                     print("Turned off Module.")
+                    BehaviorShield = "OFF"
                 else:
                   print("Okay, good thing you didn't :p")
+              else:
+                print("Turning on module...")
+                BehaviorShield = "ON"
+
+
             if sec == "3":
               print("Please wait...")
-              if WebShield == True:
+              if WebShield == "ON":
                 WSQ = input("Are you sure you want to turn off this module? (Web Shield)")
                 if WSQ == "y":
                   print("Attempting to turn off module...")
@@ -1026,11 +1039,16 @@ if Startboot == "":
                       print("Wrong password")
                   else:
                     print("Turned off Module.")
+                    WebShield = "OFF"
                 else:
                   print("Okay, good thing you didn't :p")
+              else:
+                print("Turning on module...")
+                WebShield = "ON"
+
             if sec == "4":
               print("Please wait...")
-              if MailShield == True:
+              if MailShield == "ON":
                 MSQ = input("Are you sure you want to turn off this module? (Mail Shield)")
                 if MSQ == "y":
                   print("Attempting to turn off module...")
@@ -1041,10 +1059,12 @@ if Startboot == "":
                       print("Turned off module")
                     else:
                       print("Wrong password")
-                  else:
-                    print("Turned off Module.")
                 else:
                   print("Okay, good thing you didn't :p")
+              else:
+                print("Turned off Module.")
+                MailShield = "OFF"
+                
             if sec == "1a":
               print("Preparing to run a quick scan...")
               time.sleep(2)
