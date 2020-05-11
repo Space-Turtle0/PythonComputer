@@ -25,7 +25,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = False
+DEVMODE = True
 
 #Starter Values:
 filetf = False
@@ -36,12 +36,14 @@ letters = string.ascii_letters
 DeCode = ( ''.join(random.choice(letters) for i in range(10)) )
 save = "Null"
 linkpl = "Null"
+newaccount1 = False
 
 #Security Values
 FileShield = True
 BehaviorShield = True
 WebShield = True
 MailShield = True
+accountstat = "admin"
 
 '''
 #KeyProgram
@@ -263,7 +265,7 @@ if DEVMODE == False:
 
 
 #Not being used
-'''
+
 def colortext():
   class bcolors:
     HEADER = '\033[95m'
@@ -275,7 +277,8 @@ def colortext():
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     BLINK = '\33[6m'
-'''
+
+
 
 Startboot =input("Press Enter to get started...")
 if Startboot == "":
@@ -709,6 +712,9 @@ if Startboot == "":
                      "Sorry! You don't have enough tables or have a odd amount of tables"
                  )
         if appchoice == "Accounts":
+          if DEVMODE == True:
+            print("You are not allowed to access this component with DEVMODE on")
+            exit("Access Denied: DEVMODE can not be used with this config!")
           PCProcessLOGS = open("PCProcessLOGS","a")
           PCProcessLOGS.write("Setting up "+ appchoice + "\n")
           PCProcessLOGS.write(str(currentDT) + "\n")
@@ -725,6 +731,12 @@ if Startboot == "":
             print("Please wait...")
             if accountstat == "Admin":
               time.sleep(2)
+              if newaccount1 == True:
+                print("Warning! You already have an account registered, filling this out will overwrite your other account!")
+                newwarn =input("Are you sure you want to proceed?: ")
+                if newwarn == "y":
+                  print("Exitting...")
+                  break
               print("Admin Account Registration Restricted, only 1 admin account per domain!")
               newaccount = input("Username: ")
               newpassword =input("Password: ")
