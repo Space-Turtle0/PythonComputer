@@ -22,7 +22,7 @@ Open it with command prompt.
 
 # My command line keep crashes!
 Well that shouldn't be happening. Instead of using command prompt, download one of the code editors above and run it in there. If there are any syntax issues that pop up, please open an issue so we can fix it!
-If it says that clear is not a command, don't worry. That fix is coming up soon. 
+
 
 # Help! What do I download?
 
@@ -32,7 +32,7 @@ Well it really depends on you.
 
 **2019pc.py**
 
-*Download this! Most revent version and being worked on!*
+*Download this! Most recent version and being worked on!*
 
 - https://github.com/Space-Turtle0/PythonComputer/releases
 
