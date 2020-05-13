@@ -5,6 +5,7 @@ from tqdm import tqdm
 import sys
 import string
 
+Perm = os.path.realpath(os.path.dirname(sys.argv[0]))
 '''
 Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
