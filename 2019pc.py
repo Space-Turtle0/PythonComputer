@@ -5,8 +5,6 @@ from tqdm import tqdm
 import sys
 import string
 
-print("Loading...")
-print("Preping Data")
 '''
 Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
@@ -18,7 +16,7 @@ NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 
 '''
 #OSBOOT Version 
-OSInfo = "4.1.4"
+OSInfo = "4.1.5"
 #Public Build
 BetaValue = True
 if BetaValue == True:
@@ -680,39 +678,7 @@ if Startboot == "":
             print("Current Minute is: %d" % currentDT.minute + "\n")
             print("Current Second is: %d" % currentDT.second + "\n")
             print("Current Microsecond is: %d" % currentDT.microsecond + "\n")
-        if appchoice == "Seating Chart":
-            PCProcessLOGS = open("PCProcessLOGS","a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            '''
-          numstu =int(input("How many students?"))
 
-          words = ['Me', 'Merry', 'Help', 'Please', 'Christmas']
-          random.shuffle(words)
-          '''
-            list = []
-            i = 0
-            a = 0
-            maxo = int(input("Number of students: "))
-            table = int(input("Number of tables? "))
-            if maxo % table == 0:
-                print("Check 1 complete")
-                while i < maxo:
-                    a = input("Please enter student" + str(i) + "'s" +
-                              " name : ")
-                    list.append(a)
-                    i += 1
-                random.shuffle(list)
-                print(list)
-            for x in range(table):
-                  #a + 1
-                  print(a)
-            else:
-                print(
-                     "Sorry! You don't have enough tables or have a odd amount of tables"
-                 )
         if appchoice == "Accounts":
           if DEVMODE == True:
             print("You are not allowed to access this component with DEVMODE on")
