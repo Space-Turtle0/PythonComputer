@@ -26,16 +26,14 @@ Well that shouldn't be happening. Instead of using command prompt, download one 
 
 # Help! What do I download?
 
-Well it really depends on you.
-
-**Python PC v2**
-
 **2019pc.py**
 
 *Download this! Most recent version and being worked on!*
 
 - https://github.com/Space-Turtle0/PythonComputer/releases
 
+# What is AutoUpdate.py?
+This file is a cool new feature that allows you to download the newest "release" without coming back to github, although its pretty important to check back for the new changelogs, its an easier tool to help you download the new version without coming back here!
 
 # Warning:
 Any unintentional change may cause a problem during execution! 
