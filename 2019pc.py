@@ -6,6 +6,7 @@ import sys
 import string
 
 print("Loading...")
+print("Preping Data")
 '''
 Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
