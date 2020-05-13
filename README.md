@@ -37,6 +37,8 @@ This file is a cool new feature that allows you to download the newest "release"
 In order for this module to work, please run this in a command propmt (With admin!)
 `pip install ghau`
 and to upgrade `pip install ghau --upgrade`
+
+To learn more, visit: https://github.com/InValidFire/ghau
 # Warning:
 Any unintentional change may cause a problem during execution! 
 If you did by mistake check the original file and revert your changes.
