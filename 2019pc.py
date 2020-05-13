@@ -14,14 +14,14 @@ If you want to change some of the configuration, scroll down to find that variab
 NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 - You might cause some unwanted changes if you don't know what you are doing. 
 
-Thanks once again!
 '''
+
 #OSBOOT Version 
 OSInfo = "4.1.5"
 #Public Build
 BetaValue = True
 if BetaValue == True:
-  OSInfoB = "4.1.4"
+  OSInfoB = "4.1.6"
   #Beta build
 #The Value above tells if the following 
 
@@ -46,34 +46,15 @@ WebShield = True
 MailShield = True
 accountstat = "admin"
 
-'''
-#KeyProgram
-def PasswordChecker():
-  print("Starting Program... \n")
-  rangeArg1 = 0
-  rangeArg2 = 999999
-  randNum = 23
-  for i in tqdm(range(rangeArg1, rangeArg2)):
-    randNum += 1
-  sleep(2)
-  clear()
-  Keycheck = "TurtlesAreTheBest!"
-  print("If you don't know your key, go check out the github page!")
-  print("https://github.com/Space-Turtle0/PythonComputer")
-  Keycheckerinput =input("Enter the key: ")
-  if Keycheckerinput == Keycheck:
-    UnlockedProgram = True
+#Use this to bypass warning...
+DevStat2 = "Turtle2020"
 
-
-if UnlockedProgram == False:
-  print("Please go back and start the KeyFile again!")
-'''
 #Update Notes:
 print("Thank you for using PythonComputer or OSBOOTTURTLE!")
-print("PatchNotes/Updates:")
+print("Patch Notes/Updates:")
 print(
-  "- Added secret keys and Decoder \n"
-  "- Removed save as it doesn't work now... \n"
+  "- Security Module was updated! \n"
+  "- DEVMODE has new limitations to prevent errors! \n"
   "- Fixed some nasty bugs. \n"
 )
 print("Welcome to OSBOOTTURTLE " + OSInfo + "!")
@@ -88,6 +69,12 @@ def clear():
     else: 
         _ = system('clear') 
 
+#Slow tyoe
+def cool_print(str):
+  for char in str:
+    sys.stdout.write(char)
+    sys.stdout.flush()
+    time.sleep(0.1)
 
 #Starting Screen
 
@@ -115,6 +102,24 @@ for i in tqdm(range(rangeArg1, rangeArg2)):
 sleep(2)
 clear()
 
+if DEVMODE == True:
+  cool_print("WARNING!: You have DEVMODE Turned on!")
+  time.sleep(2)
+  cool_print("This is only supposed to be turned on for development/testing! \n")
+  time.sleep(2)
+  warningdev = input("Turn off DEVMODE? (y/n): ")
+  if warningdev == "y":
+    print("Turning off DEVMODE...")
+    DEVMODE = False
+    print("DEVMODE is now: ")
+    print(DEVMODE)
+  else:
+    cool_print("In order to protect un-published data, please enter the global DEV Password!")
+    DEVPass2 = input("Password: ")
+    if DEVPass2 == DevStat2:
+      cool_print("Proceeding with DEVMODE on...")
+    else:
+      cool_print("Failed to authorize, try again later. Proceeding with DEVMODE off. ")
 
 '''Function:
 #If you want to define a function, its best to do it here if its a startup requirement!
@@ -437,7 +442,7 @@ if Startboot == "":
                 BOLD = '\033[1m'
                 UNDERLINE = '\033[4m'
                 print(f"{FAIL}Instance requires credentials to start...{ENDC}")
-
+            print("This Instance requires different credentials! ")
             time.sleep(2)
             username1 = input("Username: ")
             if username1 == "BlueCore":
