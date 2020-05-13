@@ -14,6 +14,7 @@ If you want to change some of the configuration, scroll down to find that variab
 NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 - You might cause some unwanted changes if you don't know what you are doing. 
 
+Thanks once again!
 '''
 #OSBOOT Version 
 OSInfo = "4.1.5"
