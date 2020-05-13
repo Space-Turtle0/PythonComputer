@@ -5,7 +5,7 @@ from tqdm import tqdm
 import sys
 import string
 
-
+Perm = os.path.realpath(os.path.dirname(sys.argv[0]))
 '''
 Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
@@ -181,7 +181,7 @@ def loginstart():
       UNDERLINE = '\033[4m'
       BLINK = '\33[6m'
 currentDT = datetime.datetime.now()
-PCProcessLOGS = open("PCProcessLOGS","a")
+PCProcessLOGS = open(os.path.join(Perm, "PCProcessLOGS.txt"), "a")
 PCProcessLOGS.write("Setting up services... \n")
 LoadingBar()
 PCProcessLOGS.write(str(currentDT) + "\n")
@@ -203,7 +203,7 @@ if DEVMODE == False:
   print("Setting you up as the admin account...")
   print("Setup Success!")
   accountstat = 'Admin'
-  PCLOGS = open("SetupLogs.txt", "a")
+  PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
   currentDT = datetime.datetime.now()
   PCLOGS.write(str(currentDT) + "\n")
   # "\n"
@@ -217,7 +217,7 @@ if DEVMODE == False:
   PCLOGS.write("Closing Terminal! \n")
   PCLOGS.write("----------------\n")
   PCLOGS.close()
-  AccountManager =open("AccountProcess.txt","a")
+  AccountManager =open(os.path.join(Perm,"AccountProcess.txt"),"a")
   AccountManager.write("Accounts Currently Stored: \n")
   AccountManager.write("ROOT USER: " + ssuser + "\n")
   AccountManager.write("--------------------------\n")
@@ -255,7 +255,7 @@ if DEVMODE == False:
         print(f"{WARNING}Logging in...{ENDC}")
 
     time.sleep(2)
-    PCLOGS = open("SetupLogs.txt", "a")
+    PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
     PCLOGS.write("Logged in as ROOT USER \n")
     PCLOGS.write("---------------------\n")
     PCLOGS.close()
@@ -301,7 +301,7 @@ if Startboot == "":
         appchoice = input("What would you like to use today?")
         clear()
         if appchoice == ("Settings"):
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -314,7 +314,7 @@ if Startboot == "":
             Logs.close()
 
         if appchoice == ("Browser"):
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -340,11 +340,11 @@ if Startboot == "":
                 print("Requesting www." + website, "with chrome")
                 time.sleep(1)
                 webbrowser.open("www." + website, new=0, autoraise=True)
-                Logsweb = open(r"Logs.txt", "a")
+                Logsweb = open(os.path.join(Perm,"Logs.txt"), "a")
                 Logsweb.write("Visited: www." + website + "\n")
                 Logsweb.close()
         if appchoice == ("Calculator"):
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -393,7 +393,7 @@ if Startboot == "":
 
         if appchoice == ("RMGame"):
             LoadingBar()
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -426,7 +426,7 @@ if Startboot == "":
             time.sleep(2)
 
         if appchoice == "Console":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -462,7 +462,7 @@ if Startboot == "":
                         print("Sucessfully Started " + instancename)
 
         if appchoice == "Settings-2":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -470,7 +470,7 @@ if Startboot == "":
             os.system('start ms-settings:')
 
         if appchoice == "Prime":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -488,7 +488,7 @@ if Startboot == "":
                 print(num, "is not a prime number")
 
         if appchoice == "Config":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -504,7 +504,7 @@ if Startboot == "":
                 des2009 = input("What do you want me to do with it? ")
                 if des2009 == "Open":
                     print("Opening" + fileopen)
-                    Bookmarkfile = open("r", fileopen, "a")
+                    print("failed... [Error 5]")
                     if des2009 == "Save":
                         print("Saving!")
                         save1 = input("What do you want this called? ")
@@ -513,7 +513,7 @@ if Startboot == "":
                         filetf = True
 
             if websitechoiceconfig == "Link":
-                PCProcessLOGS = open("PCProcessLOGS","a")
+                PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
                 PCProcessLOGS.write("Setting up "+ appchoice + "\n")
                 PCProcessLOGS.write(str(currentDT) + "\n")
                 PCProcessLOGS.write("------------------\n")
@@ -528,7 +528,7 @@ if Startboot == "":
                     print("If you want to remove it, come back to this!")
 
         if appchoice == "Credits":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -554,7 +554,7 @@ if Startboot == "":
                 autoraise=True)
 
         if appchoice == "WEB":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -562,7 +562,7 @@ if Startboot == "":
             print("uwu, you found this ")
             print("Well then bye!")
         if appchoice == "Domain":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -600,7 +600,7 @@ if Startboot == "":
                 print("You already have a Domain Setup...")
                 Domaininput = input("Do you want to edit/delete this?")
                 if Domaininput == "yes":
-                    f = open("Logs.txt", "w+")
+                    f = open(os.path.join(Perm, "Logs.txt"), "a")
                     with open("Logs.txt", "w") as f:
                         f.write("")
                         print("Deleting...")
@@ -614,7 +614,7 @@ if Startboot == "":
                             "To Log in with this, please go to DomainConsole!")
                         Register = False
         if appchoice == "Exit":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -623,7 +623,7 @@ if Startboot == "":
             time.sleep(2)
             exit("Logging out...")
         if appchoice == "DomainConsole":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -638,7 +638,7 @@ if Startboot == "":
                 )
                 print(f"{bcolors.FAIL}Failed to Launch!{bcolors.ENDC}")
         if appchoice == "Notes":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -650,30 +650,29 @@ if Startboot == "":
                 time.sleep(2)
                 notestxt = input(
                     "Name of the file:(add file ending at end! (.txt)) ")
-                notesx = open("notestxt.txt", "w")
+                notesx = open(os.path.join(Perm, "notestxt.txt"), "w")
                 notesx.close()
-                notesx = open("notestxt.txt", "a")
+                notesx = open(os.path.join(Perm, "notestxt.txt"), "a")
                 writenote = input("What would you like to write? ")
                 notesx.write(writenote)
                 notesx.close()
 
                 def writenotes():
-                    notesx = open("notestxt.txt", "a")
-                    writenote = input("What would you like to write? ")
-                    notesx.write(writenote + "\n")
-                    notesx.close()
-
+                  notesx = open(os.path.join(Perm, "notestxt.txt"), "a")
+                  writenote = input("What would you like to write? ")
+                  notesx.write(writenote + "\n")
+                  notesx.close()
                 noteagain = input("Would you like to write again?  ")
                 if noteagain == "yes":
                     writenotes()
                 else:
                     print("Reading you lines!")
                     notesx.close()
-                    notesx = open("notestxt.txt", "r")
+                    notesx = open(os.path.join(Perm, "notestxt.txt"), "r")
                     notesx.readlines(1)
                     notesx.close
         if appchoice == "Time":
-            PCProcessLOGS = open("PCProcessLOGS","a")
+            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
             PCProcessLOGS.write("Setting up "+ appchoice + "\n")
             PCProcessLOGS.write(str(currentDT) + "\n")
             PCProcessLOGS.write("------------------\n")
@@ -690,7 +689,7 @@ if Startboot == "":
           if DEVMODE == True:
             print("You are not allowed to access this component with DEVMODE on")
             exit("Access Denied: DEVMODE can not be used with this config!")
-          PCProcessLOGS = open("PCProcessLOGS","a")
+          PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
           PCProcessLOGS.write("Setting up "+ appchoice + "\n")
           PCProcessLOGS.write(str(currentDT) + "\n")
           PCProcessLOGS.write("------------------\n")
@@ -715,7 +714,7 @@ if Startboot == "":
               print("Admin Account Registration Restricted, only 1 admin account per domain!")
               newaccount = input("Username: ")
               newpassword =input("Password: ")
-              PCLOGS = open("SetupLogs.txt", "a")
+              PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
               currentDT = datetime.datetime.now()
               PCLOGS.write(str(currentDT) + "\n")
               PCLOGS.write("Attempting to create an account... \n")
@@ -759,7 +758,7 @@ if Startboot == "":
               print("Please go create another account and come back here to login!")
 
         if appchoice == "Pass Helper":
-          PCProcessLOGS = open("PCProcessLOGS","a")
+          PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
           PCProcessLOGS.write("Setting up "+ appchoice + "\n")
           PCProcessLOGS.write(str(currentDT) + "\n")
           PCProcessLOGS.write("------------------\n")
