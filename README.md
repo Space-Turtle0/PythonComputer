@@ -34,7 +34,9 @@ Well that shouldn't be happening. Instead of using command prompt, download one 
 
 # What is AutoUpdate.py?
 This file is a cool new feature that allows you to download the newest "release" without coming back to github, although its pretty important to check back for the new changelogs, its an easier tool to help you download the new version without coming back here!
-
+In order for this module to work, please run this in a command propmt (With admin!)
+`pip install ghau`
+and to upgrade `pip install ghau --upgrade`
 # Warning:
 Any unintentional change may cause a problem during execution! 
 If you did by mistake check the original file and revert your changes.
