@@ -5,6 +5,7 @@ from tqdm import tqdm
 import sys
 import string
 
+print("Loading...")
 '''
 Well it looks like your trying to edit me!
 That's great! If you want to change the OS BOOT number, change the variable below and rename it to whatever you want, this will also appear in the logs!
@@ -16,7 +17,7 @@ NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 
 '''
 #OSBOOT Version 
-OSInfo = "4.1.3"
+OSInfo = "4.1.4"
 #Public Build
 BetaValue = True
 if BetaValue == True:
