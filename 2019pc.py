@@ -799,6 +799,8 @@ if Startboot == "":
           des1 = "n"
           while des1 == "n":
             mycode =input("Code to execute: ")
+            if mycode == "print(sspass)":
+              exit("nah fam")
             pythonstore.write(mycode + "\n")
             if mycode == "exit":
               pythonstore.close
