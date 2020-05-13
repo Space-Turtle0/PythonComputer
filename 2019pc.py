@@ -194,7 +194,7 @@ if DEVMODE == False:
   time.sleep(2)
   print("Creating processes")
   print("No account file found... [Error Code 5] ")
-  PCLOGS =open("SetupLogs.txt","a")
+  PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
   time.sleep(2)
   print("New Account Required!")
   time.sleep(3)
@@ -309,7 +309,7 @@ if Startboot == "":
             print("Loading...")
             time.sleep(2)
             print("Connecting to document...")
-            Logs = open(r"Logs.txt", "r")
+            Logs = open(os.path.join(Perm, "Logs.txt"), "r")
             print(Logs.readlines())
             Logs.close()
 
@@ -324,8 +324,8 @@ if Startboot == "":
             if webchoice == "yes":
                 print("Loading...")
                 if "websitechoicetf" == 1:
-                    print("Opening" + linkpl)
-                    Logsweb = open(r"Logs.txt", "a")
+                    print("Opening" + linkpl) 
+                    Logsweb = open(os.path.join(Perm, "Logs.txt"), "a")
                     webbrowser.open("www." + linkpl, new=0, autoraise=True)
                     Logsweb.write("Visited: www." + linkpl + "\n")
                 else:
