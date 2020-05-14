@@ -1,0 +1,29 @@
+ERROR:root:No account file, proceeding with account setup...
+INFO:root:Used Hello as the Username to log in 
+
+INFO:root:Used Hello as the Password to log in 
+
+INFO:root:Setup is working /-
+INFO:root:Setting up files... 
+
+INFO:root:No Domain Found, proceeding as root user 
+
+INFO:root:Proceeding as OSTURTLESTRSPPER 4.1.5
+
+INFO:root:Root User logging in...
+
+INFO:root:Closing Terminal! 
+
+INFO:root:----------------
+
+INFO:root:Accounts report:
+INFO:root:Accounts Currently Stored: 
+
+INFO:root:ROOT USER: Hello
+
+INFO:root:--------------------------
+
+INFO:root:Logged in as ROOT USER 
+
+INFO:root:---------------------
+
