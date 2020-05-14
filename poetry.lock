@@ -1,0 +1,41 @@
+[[package]]
+category = "main"
+description = "Pure Python, cross platform, single function module with no dependencies for playing sounds."
+name = "playsound"
+optional = false
+python-versions = "*"
+version = "1.2.2"
+
+[[package]]
+category = "main"
+description = "Manipulate audio with an simple and easy high level interface"
+name = "pydub"
+optional = false
+python-versions = "*"
+version = "0.23.1"
+
+[[package]]
+category = "main"
+description = "GUI SDK Launched in 2018. It's 2020 and PySimpleGUI is actively developed and supported. Super-simple to create custom GUI's. 200 Demo programs & Cookbook for rapid start. Extensive documentation. Main doc is www.PySimpleGUI.org.  Examples using Machine Learning(GUI, OpenCV Integration,  Chatterbot), Rainmeter Style Floating Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. Great for beginners as well as advanced GUI programmers"
+name = "pysimplegui"
+optional = false
+python-versions = "*"
+version = "4.19.0"
+
+[[package]]
+category = "main"
+description = "Fast, Extensible Progress Meter"
+name = "tqdm"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*"
+version = "4.43.0"
+
+[metadata]
+content-hash = "41d6a0d89bba28a62b8dad6a04fe98daaac0e8fa1d55b902ed29d4cc2b2f802a"
+python-versions = "^3.7"
+
+[metadata.hashes]
+playsound = ["1e83750a5325cbccee03d6e751ba3e78c037ac95b95a3ba1f38d0c5aca9e1a34"]
+pydub = ["c362fa02da1eebd1d08bd47aa9b0102582dff7ca2269dbe9e043d228a0c1ea93", "d29901a486fb421c5d7b0f3d5d3a60527179204d8ffb20e74e1ae81c17e81b46"]
+pysimplegui = ["3916c610f7c614028ada7f42da05ab17840d67ceba2c132a57fb532085b6a6a5", "68750dc40d802db04087d34103bdc656402fb0f781dc4f00bf6a8593c9f118b2"]
+tqdm = ["0d8b5afb66e23d80433102e9bd8b5c8b65d34c2a2255b2de58d97bd2ea8170fd", "f35fb121bafa030bd94e74fcfd44f3c2830039a2ddef7fc87ef1c2d205237b24"]
