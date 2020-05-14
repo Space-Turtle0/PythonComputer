@@ -34,7 +34,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = False
+DEVMODE = True
 
 #Starter Values:
 filetf = False
@@ -189,10 +189,12 @@ def loginstart():
       BLINK = '\33[6m'
 currentDT = datetime.datetime.now()
 PCProcessLOGS = open(os.path.join(Perm, "PCProcessLOGS.txt"), "a")
-logging.info("Setting up services... \n")
+PCProcessLOGS.write("Setting up services... \n")
 LoadingBar()
+PCProcessLOGS.write(str(currentDT) + "\n")
+PCProcessLOGS.write("------------------\n")
+PCProcessLOGS.close
 currentDT = datetime.datetime.now()
-if 
 if DEVMODE == False:
   print(str(currentDT))
   print("Reseting Services...")
@@ -300,7 +302,8 @@ if Startboot == "":
         appchoice = input("What would you like to use today?")
         clear()
         if appchoice == ("Settings"):
-            logger.info("Setting up "+ appch.info(str(currentDT) + "\n")
+            logger.info("Setting up "+ appchoice + "\n")
+            loggerinfo(str(currentDT) + "\n")
             logger.info("------------------\n")
             PCProcessLOGS.close
             print("Loading...")
@@ -929,6 +932,23 @@ if Startboot == "":
                 print("Threats found!")
                 time.sleep(1)
                 print("Collecting Data...")
+                time.sleep(1)
+                print("Trojan Found at: ")
+                print("C:/bootdisk/rootuser/datalogs/files/rtxa.exe")
+                cleanupF =input("Would you like to fix this?")
+                if cleanupF == "y":
+                  print("Fixing threat...")
+                  time.sleep(2)
+                  print("Threat moved to virus chest")
+                  time.sleep(3)
+                else:
+                  print("Leaving threat...")
+                  time.sleep(2)
+              else:
+                print("No threats found...")
+              
+
+      print("Collecting Data...")
                 time.sleep(1)
                 print("Trojan Found at: ")
                 print("C:/bootdisk/rootuser/datalogs/files/rtxa.exe")
