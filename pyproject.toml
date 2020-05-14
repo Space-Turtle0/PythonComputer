@@ -4,7 +4,7 @@ requires = ["poetry>=0.12"]
 
 [tool]
 [tool.poetry]
-authors = ["Space-Turtle0 <rohit.penta@mtsdstudent.us>"]
+authors = [""]
 description = ""
 name = "pythonpcdevflag"
 version = "0.1.0"
