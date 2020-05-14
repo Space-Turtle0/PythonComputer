@@ -25,7 +25,7 @@ logger=logging.getLogger()
 logger.setLevel(logging.DEBUG) 
 
 #OSBOOT Version 
-OSInfo = "4.1.5"
+OSInfo = "4.2.2"
 #Public Build
 BetaValue = True
 if BetaValue == True:
