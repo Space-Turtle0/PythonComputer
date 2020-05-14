@@ -25,11 +25,11 @@ logger=logging.getLogger()
 logger.setLevel(logging.DEBUG) 
 
 #OSBOOT Version 
-OSInfo = "4.2"
+OSInfo = "4.1.5"
 #Public Build
 BetaValue = True
-if BetaValue == False:
-  OSInfoB = "null"
+if BetaValue == True:
+  OSInfoB = "4.1.6"
   #Beta build
 #The Value above tells if the following 
 
@@ -219,7 +219,7 @@ if DEVMODE == False:
   logger.info("No Domain Found, proceeding as root user \n")
   logger.info("Proceeding as OSTURTLESTRSPPER " + OSInfo + "\n")
   logger.info("Root User logging in...\n")
-  logger.infoe("Closing Terminal! \n")
+  logger.info("Closing Terminal! \n")
   logger.info("----------------\n")
   logger.info("Accounts report:")
   logger.info("Accounts Currently Stored: \n")
