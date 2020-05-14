@@ -189,12 +189,10 @@ def loginstart():
       BLINK = '\33[6m'
 currentDT = datetime.datetime.now()
 PCProcessLOGS = open(os.path.join(Perm, "PCProcessLOGS.txt"), "a")
-PCProcessLOGS.write("Setting up services... \n")
+logging.info("Setting up services... \n")
 LoadingBar()
-PCProcessLOGS.write(str(currentDT) + "\n")
-PCProcessLOGS.write("------------------\n")
-PCProcessLOGS.close
 currentDT = datetime.datetime.now()
+if 
 if DEVMODE == False:
   print(str(currentDT))
   print("Reseting Services...")
@@ -302,8 +300,7 @@ if Startboot == "":
         appchoice = input("What would you like to use today?")
         clear()
         if appchoice == ("Settings"):
-            logger.info("Setting up "+ appchoice + "\n")
-            logger.info(str(currentDT) + "\n")
+            logger.info("Setting up "+ appch.info(str(currentDT) + "\n")
             logger.info("------------------\n")
             PCProcessLOGS.close
             print("Loading...")
