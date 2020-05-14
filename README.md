@@ -1,24 +1,10 @@
 # PythonComputer
 [![Run on Repl.it](https://repl.it/badge/github/Space-Turtle0/PythonComputer)](https://repl.it/github/Space-Turtle0/PythonComputer)
 # PythonComputer is a simple python program (no display) that simulates a computer. 
->This Program isn't finished and will be updated time to time!
+>This Program isn't a finished project yet! 
 
 
-~~There will be additional elements which you can add to on your own,~~
-- Removed all other files as they are no longer supported
 
-# INSTALATION/ IDE Setup
-1) Download the ZIP folder
-2) Download Visual Studio Code or PyCharm
-VSC: https://code.visualstudio.com/
-PyCharm: https://www.jetbrains.com/pycharm/download/
-3) Follow their installation process
-4) Download https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py
-5) Open the Zip Folder
-6) Make sure you open with VSC or PyCharm! Otherwise you won't be able to edit it.
-7) Congrats! You now have access to the folder.
-If you just want to run it without editing...
-Open it with command prompt.
 
 # My command line keep crashes!
 Well that shouldn't be happening. Instead of using command prompt, download one of the code editors above and run it in there. If there are any syntax issues that pop up, please open an issue so we can fix it!
@@ -32,6 +18,17 @@ Well that shouldn't be happening. Instead of using command prompt, download one 
 
 - https://github.com/Space-Turtle0/PythonComputer/releases
 
+*Why can't I just download the branch instead of a repo?*
+Don't, branch files are still considered non-production ready until they are actually published as a release, many updates on there are finished but do not fit together (formatting)
+
+**Why are there multiple branches?**
+**master** - This branch is the final non-buggy product. Went through Beta Branch first before publish
+
+**Beta-Branch-v2** - This branch is non-production ready. Yes its where all the good new features come up but its not a finished product yet.
+
+**Repl-Support-Branch** - This branch is used for people using repl. Or an online IDE. It requires more files to operate and a run command. Which is `python 2019pc.py`
+
+
 # What is AutoUpdate.py?
 This file is a cool new feature that allows you to download the newest "release" without coming back to github, although its pretty important to check back for the new changelogs, its an easier tool to help you download the new version without coming back here!
 In order for this module to work, please run this in a command propmt (With admin!)
@@ -39,11 +36,7 @@ In order for this module to work, please run this in a command propmt (With admi
 and to upgrade `pip install ghau --upgrade`
 
 To learn more, visit: https://github.com/InValidFire/ghau
-# Warning:
-Any unintentional change may cause a problem during execution! 
-If you did by mistake check the original file and revert your changes.
-*Or just do Ctrl + Z if the edit wasn't that far back* 
-Otherwise, make sure you know what your doing before making a critical change!
+
 
 # [New Python Computer]
 - If you're using the new 2019pc.py
