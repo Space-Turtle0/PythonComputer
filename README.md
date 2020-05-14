@@ -1,6 +1,7 @@
 # PythonComputer
 [![Run on Repl.it](https://repl.it/badge/github/Space-Turtle0/PythonComputer)](https://repl.it/github/Space-Turtle0/PythonComputer)
-![version](https://img.shields.io/badge/version-4.2.3-blue)
+
+Stable Version: ![version](https://img.shields.io/badge/version-4.2.3-blue)
 # PythonComputer is a simple python program (no display) that simulates a computer. 
 >This Program isn't a finished project yet! 
 
