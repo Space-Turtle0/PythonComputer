@@ -2,6 +2,7 @@ import time, webbrowser, os, warnings, random, math, datetime
 from time import sleep
 from os import system, name
 from tqdm import tqdm
+import logging
 import sys
 import string
 
@@ -16,6 +17,12 @@ NOTE: MAKE SURE YOU KNOW WHAT YOU ARE CHANGING!
 - You might cause some unwanted changes if you don't know what you are doing. 
 
 '''
+
+#Logging Setup:
+logging.basicConfig(filename ='app.log', 
+                        level = logging.ERROR)
+logger=logging.getLogger() 
+logger.setLevel(logging.DEBUG) 
 
 #OSBOOT Version 
 OSInfo = "4.1.5"
@@ -194,7 +201,7 @@ if DEVMODE == False:
   time.sleep(2)
   print("Creating processes")
   print("No account file found... [Error Code 5] ")
-  PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
+  logger.error("No account file, proceeding with account setup...")
   time.sleep(2)
   print("New Account Required!")
   time.sleep(3)
@@ -203,25 +210,21 @@ if DEVMODE == False:
   print("Setting you up as the admin account...")
   print("Setup Success!")
   accountstat = 'Admin'
-  PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
   currentDT = datetime.datetime.now()
-  PCLOGS.write(str(currentDT) + "\n")
   # "\n"
-  PCLOGS.write("Used " + ssuser + " as the Username to log in \n")
-  PCLOGS.write("Used " + sspass + " as the Password to log in \n")
-  PCLOGS.write("Setup is working /-")
-  PCLOGS.write("Setting up files... \n")
-  PCLOGS.write("No Domain Found, proceeding as root user \n")
-  PCLOGS.write("Proceeding as OSTURTLESTRSPPER " + OSInfo + "\n")
-  PCLOGS.write("Root User logging in...\n")
-  PCLOGS.write("Closing Terminal! \n")
-  PCLOGS.write("----------------\n")
-  PCLOGS.close()
-  AccountManager =open(os.path.join(Perm,"AccountProcess.txt"),"a")
-  AccountManager.write("Accounts Currently Stored: \n")
-  AccountManager.write("ROOT USER: " + ssuser + "\n")
-  AccountManager.write("--------------------------\n")
-  AccountManager.close
+  logger.info("Used " + ssuser + " as the Username to log in \n")
+  logger.info("Used " + sspass + " as the Password to log in \n")
+  logger.info("Setup is working /-")
+  logger.info("Setting up files... \n")
+  logger.info("No Domain Found, proceeding as root user \n")
+  logger.info("Proceeding as OSTURTLESTRSPPER " + OSInfo + "\n")
+  logger.info("Root User logging in...\n")
+  logger.infoe("Closing Terminal! \n")
+  logger.info("----------------\n")
+  logger.info("Accounts report:")
+  logger.info("Accounts Currently Stored: \n")
+  logger.info("ROOT USER: " + ssuser + "\n")
+  logger.info("--------------------------\n")
   websitechoicetf = 0
   print("Booting...")
   time.sleep(2)
@@ -255,10 +258,8 @@ if DEVMODE == False:
         print(f"{WARNING}Logging in...{ENDC}")
 
     time.sleep(2)
-    PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-    PCLOGS.write("Logged in as ROOT USER \n")
-    PCLOGS.write("---------------------\n")
-    PCLOGS.close()
+    logger.info("Logged in as ROOT USER \n")
+    logger.info("---------------------\n")
 
 
 #Function Workspace End
@@ -301,10 +302,9 @@ if Startboot == "":
         appchoice = input("What would you like to use today?")
         clear()
         if appchoice == ("Settings"):
-            PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
+            logger.info("Setting up "+ appchoice + "\n")
+            logger.info(str(currentDT) + "\n")
+            logger.info("------------------\n")
             PCProcessLOGS.close
             print("Loading...")
             time.sleep(2)
@@ -314,41 +314,24 @@ if Startboot == "":
             Logs.close()
 
         if appchoice == ("Browser"):
-            PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
+            logger.info(str(currentDT) + "\n")
+            logger.info("------------------\n")
             print("Loading...")
-            webchoice = input("Open bookmarks?")
-            if webchoice == "yes":
-                print("Loading...")
-                if "websitechoicetf" == 1:
-                    print("Opening" + linkpl) 
-                    Logsweb = open(os.path.join(Perm, "Logs.txt"), "a")
-                    webbrowser.open("www." + linkpl, new=0, autoraise=True)
-                    Logsweb.write("Visited: www." + linkpl + "\n")
-                else:
-                    print("Sorry, you have no bookmark!")
-                    print("Set it up in Config!")
-
-            else:
-                website = input(
-                    "What would you like to search? Format: python.org ")
-                print("Opening " + "www." + website)
-                time.sleep(1)
-                print("Requesting www." + website, "with chrome")
-                time.sleep(1)
-                webbrowser.open("www." + website, new=0, autoraise=True)
-                Logsweb = open(os.path.join(Perm,"Logs.txt"), "a")
-                Logsweb.write("Visited: www." + website + "\n")
-                Logsweb.close()
+            website = input(
+              "What would you like to search? Format: python.org ")
+            print("Opening " + "www." + website)
+            time.sleep(1)
+            print("Requesting www." + website, "with chrome")
+            time.sleep(1)
+            webbrowser.open("www." + website, new=0, autoraise=True)
+            Logsweb = open(os.path.join(Perm,"Logs.txt"), "a")
+            Logsweb.write("Visited: www." + website + "\n")
+            Logsweb.close()
         if appchoice == ("Calculator"):
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
+            logger.info(str(currentDT) + "\n")
+            logger.info("------------------\n")
 
             def add(x, y):
                 return x + y
@@ -365,72 +348,52 @@ if Startboot == "":
             def divide(x, y):
                 return x / y
 
-            print("Select operation.")
-            print("1.Add")
-            print("2.Subtract")
-            print("3.Multiply")
-            print("4.Divide")
-
-            # Take input from the user
-            choice = input("Enter choice(1/2/3/4):")
-
-            num1 = int(input("Enter first number: "))
-            num2 = int(input("Enter second number: "))
-
-            if choice == '1':
-                print(num1, "+", num2, "=", add(num1, num2))
-
-            elif choice == '2':
-                print(num1, "-", num2, "=", subtract(num1, num2))
-
-            elif choice == '3':
-                print(num1, "*", num2, "=", multiply(num1, num2))
-
-            elif choice == '4':
-                print(num1, "/", num2, "=", divide(num1, num2))
+            Cacl =input("What would you like to open? (Calculator or Prime)?")
+            if Cacl == "Prime":
+              num = int(input("Number to test: "))
+              if num > 1:
+                  for i in range(2, num):
+                      if (num % i) == 0:
+                          print(num, "is not a prime number")
+                          print(i, "times", num // i, "is", num)
+                          break
+                  else:
+                      print(num, "is a prime number")
+              else:
+                  print(num, "is not a prime number")
+                  
             else:
-                print("Invalid input")
 
-        if appchoice == ("RMGame"):
-            LoadingBar()
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            print("Please wait, downloading game...")
-            time.sleep(5)
-            print("Aquiring plugin...")
-            print("Aquiring pip.2.py")
-            print("Aquiring connection...")
-            print("Testing connection...")
-            print("Connection Secure")
-            time.sleep(3)
-            print("Starting download...")
-            print("Downloading...")
-            time.sleep(5)
-            print("Completed.")
-            print("Running file...")
-            time.sleep(3)
-            print("Welcome to the RM game.")
-            print(
-                "This game is undergoing high improvements.So please be mindful of the game.."
-            )
-            print("Checking status of the game...")
-            print("Starting connection...")
-            time.sleep(3)
-            webbrowser.open(
-                'www.roblox.com/games/1466995005/Ragdoll-Mayhem?refPageId=d99e069d-944a-4f48-b55c-34352d088da1',
-                new=0,
-                autoraise=True)
-            time.sleep(2)
+              print("Select operation.")
+              print("1.Add")
+              print("2.Subtract")
+              print("3.Multiply")
+              print("4.Divide")
+
+              # Take input from the user
+              choice = input("Enter choice(1/2/3/4):")
+
+              num1 = int(input("Enter first number: "))
+              num2 = int(input("Enter second number: "))
+
+              if choice == '1':
+                  print(num1, "+", num2, "=", add(num1, num2))
+
+              elif choice == '2':
+                  print(num1, "-", num2, "=", subtract(num1, num2))
+
+              elif choice == '3':
+                  print(num1, "*", num2, "=", multiply(num1, num2))
+
+              elif choice == '4':
+                  print(num1, "/", num2, "=", divide(num1, num2))
+              else:
+                  print("Invalid input")
+
+        
 
         if appchoice == "Console":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
             print("Launching a instance")
 
             class bcolors:
@@ -461,38 +424,9 @@ if Startboot == "":
                         OKGREEN = '\033[92m'
                         print("Sucessfully Started " + instancename)
 
-        if appchoice == "Settings-2":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            os.system('start ms-settings:')
-
-        if appchoice == "Prime":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            num = int(input("Number to test: "))
-            if num > 1:
-                for i in range(2, num):
-                    if (num % i) == 0:
-                        print(num, "is not a prime number")
-                        print(i, "times", num // i, "is", num)
-                        break
-                else:
-                    print(num, "is a prime number")
-            else:
-                print(num, "is not a prime number")
 
         if appchoice == "Config":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info.write("Setting up "+ appchoice + "\n")
             print("Get your path/link ready!")
             print("If you are saving a file...")
             print("Please enter the FULL PATH!")
@@ -513,11 +447,7 @@ if Startboot == "":
                         filetf = True
 
             if websitechoiceconfig == "Link":
-                PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-                PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-                PCProcessLOGS.write(str(currentDT) + "\n")
-                PCProcessLOGS.write("------------------\n")
-                PCProcessLOGS.close
+                logger.info("Setting up "+ appchoice + "\n")
                 linkpl = input("Copy and Paste your link here.. ")
                 des2008 = input("Should I open it? ")
                 websitechoicetf = 1
@@ -527,50 +457,11 @@ if Startboot == "":
                     print("Alright, I saved the link.")
                     print("If you want to remove it, come back to this!")
 
-        if appchoice == "Credits":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            print("Loading...")
-            time.sleep(2)
-            print("Thank you for using my program!")
-            print(
-                "I've spent a lot of time on this project and its been wonderful!"
-            )
-            print("If you don't know what this is...")
-            print(
-                "Its a simple .py file that tried to show many modules/python features!"
-            )
-            print("Hopefully you took something away from this!")
-            print("Program made by Space")
-            print("aka: Space Turtle!")
-            print("Check out my other stuff on GitHub!")
-            time.sleep(1)
-            webbrowser.open(
-                "https://github.com/Space-Turtle0/PythonComputer/blob/master/2019pc.py",
-                new=0,
-                autoraise=True)
-
-        if appchoice == "WEB":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
-            print("uwu, you found this ")
-            print("Well then bye!")
         if appchoice == "Domain":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
             print("Loading...")
             time.sleep(2)
             if Register == False:
-
                 class bcolors:
                     HEADER = '\033[95m'
                     OKBLUE = '\033[94m'
@@ -614,20 +505,13 @@ if Startboot == "":
                             "To Log in with this, please go to DomainConsole!")
                         Register = False
         if appchoice == "Exit":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
             print("...")
             time.sleep(2)
             exit("Logging out...")
+
         if appchoice == "DomainConsole":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
             print("waiting...")
             if Register == True:
                 print(f"{bcolors.WARNING}Launching!{bcolors.ENDC}")
@@ -638,11 +522,7 @@ if Startboot == "":
                 )
                 print(f"{bcolors.FAIL}Failed to Launch!{bcolors.ENDC}")
         if appchoice == "Notes":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
             print("Loading...")
             notesyn = input("Are you writting a new file? (y/n) ")
             if notesyn == "y":
@@ -671,12 +551,9 @@ if Startboot == "":
                     notesx = open(os.path.join(Perm, "notestxt.txt"), "r")
                     notesx.readlines(1)
                     notesx.close
+                    
         if appchoice == "Time":
-            PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-            PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-            PCProcessLOGS.write(str(currentDT) + "\n")
-            PCProcessLOGS.write("------------------\n")
-            PCProcessLOGS.close
+            logger.info("Setting up "+ appchoice + "\n")
             print("Current Year is: %d" % currentDT.year + "\n")
             print("Current Month is: %d" % currentDT.month + "\n")
             print("Current Day is: %d" % currentDT.day + "\n")
@@ -689,11 +566,7 @@ if Startboot == "":
           if DEVMODE == True:
             print("You are not allowed to access this component with DEVMODE on")
             exit("Access Denied: DEVMODE can not be used with this config!")
-          PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-          PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-          PCProcessLOGS.write(str(currentDT) + "\n")
-          PCProcessLOGS.write("------------------\n")
-          PCProcessLOGS.close
+          logger.info("Setting up "+ appchoice + "\n")
           print(f"{bcolors.WARNING}Please wait, loading your accounts!{bcolors.ENDC}")
           time.sleep(2)
           AccountManager =open("AccountProcess.txt","r")
@@ -714,20 +587,11 @@ if Startboot == "":
               print("Admin Account Registration Restricted, only 1 admin account per domain!")
               newaccount = input("Username: ")
               newpassword =input("Password: ")
-              PCLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-              currentDT = datetime.datetime.now()
-              PCLOGS.write(str(currentDT) + "\n")
-              PCLOGS.write("Attempting to create an account... \n")
-              PCLOGS.write("Created an account: \n")
-              PCLOGS.write("Username: " + newaccount + "\n")
-              PCLOGS.write("Password: " + newpassword + "\n")
-              PCLOGS.write("------------------------")
-              PCLOGS.close
-              AccountManager =open("AccountProcess.txt","a")
-              currentDT = datetime.datetime.now()
-              AccountManager.write(str(currentDT) + "\n")
-              AccountManager.write("Normal Account: " + newaccount + "\n")
-              AccountManager.write("--------------------------\n")
+              logger.warning("Attempting to create an account... \n")
+              logger.info("Created an account: \n")
+              logger.info("Username: " + newaccount + "\n")
+              logger.info("Password: " + newpassword + "\n")
+              logger.info("Normal Account: " + newaccount + "\n")
               newaccount1 = True
               accountstat = "Admin"
               print("Created your account!")
@@ -758,11 +622,7 @@ if Startboot == "":
               print("Please go create another account and come back here to login!")
 
         if appchoice == "Pass Helper":
-          PCProcessLOGS = open(os.path.join(Perm, "SetupLogs.txt"), "a")
-          PCProcessLOGS.write("Setting up "+ appchoice + "\n")
-          PCProcessLOGS.write(str(currentDT) + "\n")
-          PCProcessLOGS.write("------------------\n")
-          PCProcessLOGS.close
+          logger.info("Setting up "+ appchoice + "\n")
           print("Accessing Account Processes")
           passhelper = input("What account do you need to access?")
           if passhelper == newaccount:
@@ -770,26 +630,19 @@ if Startboot == "":
             adminpassword = input("Admin Password: ")
             if adminpassword == sspass:
               print("Granted!")
-              AccountProcess =open("AccountProcess","a")
-              AccountProcess.write("Used admin password to enter Pass Helper \n")
-              AccountProcess.write("----------------------------\n")
-              AccountProcess.close()
+              logger.info("Used admin password to enter Pass Helper \n")
             else:
               print("Wrong password!")
-              AccountProcess =open("AccountProcess","a")
-              AccountProcess.write("Entered wrong password (Admin) \n")
-              AccountProcess.write("----------------------------\n")
-              AccountProcess.close()
+              logger.info("Entered wrong password (Admin) \n")
           else:
             print("Accessing")
             time.sleep(2)
             adminrec = input("Admin Username:")
             if adminrec == ssuser:
               print("Your password: " + sspass)
-              AccountProcess =open("AccountProcess","a")
-              AccountProcess.write("Requested Admin Password \n")
-              AccountProcess.write("----------------------------\n")
-              AccountProcess.close()
+              logger.info("Requested Admin Password \n")
+
+
               
         if appchoice == "WebConsole":
           print("Attempting to connect to the server...")
@@ -799,8 +652,6 @@ if Startboot == "":
           des1 = "n"
           while des1 == "n":
             mycode =input("Code to execute: ")
-            if mycode == "print(sspass)":
-              exit("nah fam")
             pythonstore.write(mycode + "\n")
             if mycode == "exit":
               pythonstore.close
@@ -810,18 +661,7 @@ if Startboot == "":
             else:
               exec(mycode)
 
-        if appchoice == "Spam":
-          for i in range(1000):
-            print(" Processing... \n")
-            rangeArg1 = 0
-            rangeArg2 = 999
-            randNum = 23
-            for i in tqdm(range(rangeArg1, rangeArg2)):
-              randNum += 1
-            print("Did you enjoy? lol")
 
-        if appchoice == "what":
-          print("why u here?")
         if appchoice == "chatter":
           CH =open("ChatterData","a")
           CHname =input("Hello there! What should I call you?: ")
@@ -836,6 +676,7 @@ if Startboot == "":
           CH.write("You like to play " + CHfavplay + "\n")
           CHcolor =input("What is your favorite color?")
           CH.write("Your favorite color is" + CHcolor + "\n")
+
         if appchoice == "Reload":
           print("Are you sure you want to restart the machine?")
           restartconf =input("(y/n)")
@@ -853,6 +694,9 @@ if Startboot == "":
             clear()
             print("Removing Storage Containers....")
             time.sleep(2)
+            print("Restarted values...")
+
+
         if appchoice == "TaskManager":
           print("...")
           time.sleep(3)
@@ -941,9 +785,11 @@ if Startboot == "":
           if SecurityBlocked == False:
             print("Loading Turtle Anti-Malware...")
             time.sleep(2)
+            logger.info("Opening Security...")
             print("There is an update, please wait while we update your system...")
+            logger.debug("Updating System...")
             time.sleep(2)
-            print("Extracting TurtleAnti-Malware_6.2.4 \n")
+            print("Extracting TurtleAnti-Malware_6.2.7 \n")
             rangeArg1 = 0
             rangeArg2 = 999999
             randNum = 23
