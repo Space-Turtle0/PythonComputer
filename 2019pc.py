@@ -34,7 +34,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = False
+DEVMODE = True
 
 #Starter Values:
 filetf = False
@@ -46,6 +46,8 @@ DeCode = ( ''.join(random.choice(letters) for i in range(10)) )
 save = "Null"
 linkpl = "Null"
 newaccount1 = False
+WebConsoleSec = False
+WarnWebC = 0
 
 #Security Values
 FileShield = True
@@ -647,6 +649,15 @@ if Startboot == "":
         if appchoice == "WebConsole":
           print("Attempting to connect to the server...")
           LoadingBar()
+          if BehaviorShield == True:
+            if WarnWebC == 0:
+              print("Security has blocked a threat from establishing a connection to your PC!")
+              print("THREAT: WebConsole 3.2")
+              AllowTh = input("Allow Access?")
+              if AllowTh == "y":
+                print("Allowing program...")
+              else:
+                des = "y"
           pythonstore =open("CodeEval.txt","a")
           print("If you would like to exit out of the program/loop please use "'exit'" in order to leave the VM" )
           des1 = "n"
@@ -694,7 +705,24 @@ if Startboot == "":
             clear()
             print("Removing Storage Containers....")
             time.sleep(2)
+            filetf = False
+            Register = False
+            KeyAWOL = False
+            SecurityBlocked = False
+            letters = string.ascii_letters
+            DeCode = ( ''.join(random.choice(letters) for i in range(10)) )
+            newaccount1 = False
+            WebConsoleSec = False
+            WarnWebC = 0
+            #Security Values
+            FileShield = True
+            BehaviorShield = True
+            WebShield = True
+            MailShield = True 
+            accountstat = "admin"
             print("Restarted values...")
+            time.sleep(2)
+            print("Reverted to " + OSInfo)
 
 
         if appchoice == "TaskManager":
