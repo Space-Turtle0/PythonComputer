@@ -34,7 +34,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = True
+DEVMODE = False
 
 #Starter Values:
 filetf = False
@@ -64,7 +64,7 @@ print("Thank you for using PythonComputer or OSBOOTTURTLE!")
 print("Patch Notes/Updates:")
 print(
   "- Security Module was updated! \n"
-  "- DEVMODE has new limitations to prevent errors! \n"
+  "- Added a new RegEdit app so you can modify applications! \n"
   "- Fixed some nasty bugs. \n"
 )
 print("Welcome to OSBOOTTURTLE " + OSInfo + "!")
@@ -295,7 +295,7 @@ if Startboot == "":
     print(
         "Welcome to the Home Screen. This computer is not built for real life useage.."
     )
-    print("This computer is soley for the use of testing.")
+    print("This computer is ran by the command line!")
     time.sleep(2)
     des = "y"
     while des == "y":
