@@ -34,7 +34,7 @@ if BetaValue == True:
 #The Value above tells if the following 
 
 #Use this to skip login start!
-DEVMODE = False
+DEVMODE = True
 
 #Starter Values:
 filetf = False
@@ -114,8 +114,6 @@ clear()
 
 if DEVMODE == True:
   cool_print("WARNING!: You have DEVMODE Turned on! \n")
-  time.sleep(2)
-  cool_print("This is only supposed to be turned on for development/testing! \n")
   time.sleep(2)
   warningdev = input("Turn off DEVMODE? (y/n): \n")
   if warningdev == "y":
@@ -835,19 +833,8 @@ if Startboot == "":
             RegFile = open(os.path.join(Perm, "RegEdit.txt"), "r")
             print(RegFile.read())
             time.sleep(2)
-            RegEditCon = input("Would you like to edit the contents?")
-            if RegEditCon == "y":
-              print("Opening Up Console...")
-              time.sleep(2)
-              print("If you would like to exit out of the program/loop please use "'exit'" in order to leave the VM" )
-              des2 = "n"
-              while des2 == "n":
-                mycode =input("RegEdit: ")
-                if mycode == "exit":
-                  print("Exiting Console...")
-                  des2 = "yes"
-                else:
-                  exec(mycode)
+    
+
           else:
             print("Failed to open...")
             print("You aren't in DEVMODE!")
