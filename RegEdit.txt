@@ -1,0 +1,45 @@
+REGISTRY EDITER!
+---------------------------------------------
+#Logging Setup:
+(Change the way logging is setup)
+logging.basicConfig(filename ='app.log', 
+                        level = logging.ERROR)
+logger=logging.getLogger() 
+logger.setLevel(logging.DEBUG) 
+
+#OSBOOT Version
+(Manually Change File Version) 
+OSInfo = "4.3"
+#Public Build
+BetaValue = True
+if BetaValue == True:
+  OSInfoB = "4.1.6"
+  #Beta build
+#The Value above tells if the following 
+
+#Use this to skip login start!
+DEVMODE = True
+
+
+#Starter Values:
+filetf = False
+Register = False
+KeyAWOL = False
+SecurityBlocked = False
+letters = string.ascii_letters
+DeCode = ( ''.join(random.choice(letters) for i in range(10)) )
+save = "Null"
+linkpl = "Null"
+newaccount1 = False
+WebConsoleSec = False
+WarnWebC = 0
+
+#Security Values
+FileShield = True
+BehaviorShield = True
+WebShield = True
+MailShield = True
+accountstat = "admin"
+
+#Use this to bypass warning...
+DevStat2 = "Turtle2020"

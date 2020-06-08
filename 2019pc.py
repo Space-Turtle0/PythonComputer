@@ -25,7 +25,7 @@ logger=logging.getLogger()
 logger.setLevel(logging.DEBUG) 
 
 #OSBOOT Version 
-OSInfo = "4.2.2"
+OSInfo = "4.3"
 #Public Build
 BetaValue = True
 if BetaValue == True:
@@ -113,21 +113,21 @@ sleep(2)
 clear()
 
 if DEVMODE == True:
-  cool_print("WARNING!: You have DEVMODE Turned on!")
+  cool_print("WARNING!: You have DEVMODE Turned on! \n")
   time.sleep(2)
   cool_print("This is only supposed to be turned on for development/testing! \n")
   time.sleep(2)
-  warningdev = input("Turn off DEVMODE? (y/n): ")
+  warningdev = input("Turn off DEVMODE? (y/n): \n")
   if warningdev == "y":
     print("Turning off DEVMODE...")
     DEVMODE = False
     print("DEVMODE is now: ")
     print(DEVMODE)
   else:
-    cool_print("In order to protect un-published data, please enter the global DEV Password!")
+    cool_print("In order to protect un-published data, please enter the global DEV Password! \n")
     DEVPass2 = input("Password: ")
     if DEVPass2 == DevStat2:
-      cool_print("Proceeding with DEVMODE on...")
+      cool_print("Proceeding with DEVMODE on... \n")
     else:
       cool_print("Failed to authorize, try again later. Proceeding with DEVMODE off. ")
 
@@ -806,7 +806,54 @@ if Startboot == "":
             print("MPU Secret: " + MPUKEY)
             print("SetupLogs Secret: " + SetupLogsKEY)
             print("Closing out of Decoder")
-        
+
+        if appchoice == "Reboot":
+          print("Please wait...")
+          time.sleep(2)
+          RebootConfirm =input("Are you sure you want to reinstall TurtleOS?")
+          if RebootConfirm == "y":
+            print("Preparing to reinstall... \n") 
+            LoadingBar()
+            print("Connecting...")
+            time.sleep(2)
+            print("Downloading Data... \n")
+            LoadingBar()
+            print("Extracting Data...")
+            LoadingBar()
+            print("Mounting Drive...")
+            print("This will take a bit!")
+            time.sleep(10)
+            print("Applying Changes....")
+            print("Checking Build...")
+            exit("Restarting Machine...")
+
+        if appchoice == "RegEdit":
+          print("Checking build date...")
+          if DEVMODE == True:
+            print("This application is in beta and you may experience bugs!")
+            time.sleep(2)
+            RegFile = open(os.path.join(Perm, "RegEdit.txt"), "r")
+            print(RegFile.read())
+            time.sleep(2)
+            RegEditCon = input("Would you like to edit the contents?")
+            if RegEditCon == "y":
+              print("Opening Up Console...")
+              time.sleep(2)
+              print("If you would like to exit out of the program/loop please use "'exit'" in order to leave the VM" )
+              des2 = "n"
+              while des2 == "n":
+                mycode =input("RegEdit: ")
+                if mycode == "exit":
+                  print("Exiting Console...")
+                  des2 = "yes"
+                else:
+                  exec(mycode)
+          else:
+            print("Failed to open...")
+            print("You aren't in DEVMODE!")
+
+
+
         if appchoice == "Security":
           print("Loading...")
           LoadingBar()
@@ -974,5 +1021,7 @@ if Startboot == "":
                   time.sleep(2)
               else:
                 print("No threats found...")
+
+          
               
 
