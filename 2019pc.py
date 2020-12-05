@@ -243,7 +243,7 @@ if DEVMODE == False:
   if usernamestart == ssuser:
       print("Acessing domain!")
   else:
-      exit("Invalid Domain/Username")
+      sys.exit("Invalid Domain/Username")
   psword = input("Please enter your password ")
   if psword == (sspass):
     class bcolors:
@@ -508,7 +508,7 @@ if Startboot == "":
             logger.info("Setting up "+ appchoice + "\n")
             print("...")
             time.sleep(2)
-            exit("Logging out...")
+            sys.exit("Logging out...")
 
         if appchoice == "DomainConsole":
             logger.info("Setting up "+ appchoice + "\n")
@@ -565,7 +565,7 @@ if Startboot == "":
         if appchoice == "Accounts":
           if DEVMODE == True:
             print("You are not allowed to access this component with DEVMODE on")
-            exit("Access Denied: DEVMODE can not be used with this config!")
+            sys.exit("Access Denied: DEVMODE can not be used with this config!")
           logger.info("Setting up "+ appchoice + "\n")
           print(f"{bcolors.WARNING}Please wait, loading your accounts!{bcolors.ENDC}")
           time.sleep(2)
@@ -823,7 +823,7 @@ if Startboot == "":
             time.sleep(10)
             print("Applying Changes....")
             print("Checking Build...")
-            exit("Restarting Machine...")
+            sys.exit("Restarting Machine...")
 
         if appchoice == "RegEdit":
           print("Checking build date...")
